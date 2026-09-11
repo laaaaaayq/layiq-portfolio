@@ -101,14 +101,13 @@ function Index() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-foreground hover:opacity-70"
+              className="text-base text-foreground hover:opacity-70"
             >
               {link.label}
             </a>
           ))}
-          <ThemeToggle />
         </div>
-        <div className="flex md:hidden">
+        <div className="flex">
           <ThemeToggle />
         </div>
       </nav>
