@@ -38,6 +38,8 @@ function Index() {
       description:
         "A movie booking experience with in-app snack selection and split payment, allowing friends to manage their individual payments.",
       tags: ["UX Research", "UI Design", "Prototype"],
+      cover: movieHubCover.url,
+      coverAlt: "Movie Hub booking app cover showing vintage cinema props",
     },
     {
       title: "Melo — Music Streaming Platform",
@@ -50,6 +52,8 @@ function Index() {
       description:
         "An e-commerce website concept covering product discovery, product selection, cart, and payment.",
       tags: ["UI Design", "UX Flow", "Figma"],
+      cover: myopCover.url,
+      coverAlt: "MyOP e-commerce website cover showing perfume bottles",
     },
   ];
 
