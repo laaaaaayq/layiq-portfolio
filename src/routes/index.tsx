@@ -83,7 +83,7 @@ function Index() {
     },
     {
       title: "Tools",
-      description: "Figma · FigJam · Canva · Google Stitch · Gemini",
+      description: "Figma · FigJam · Canva · Google Stitch · Gemini · ChatGPT",
     },
     {
       title: "My Approach",
