@@ -103,12 +103,12 @@ function Index() {
             users, solving design problems, and turning ideas into meaningful
             digital products.
           </p>
-          <Link
-            to="#work"
+          <a
+            href="#work"
             className="mt-6 inline-flex items-center rounded-full bg-primary px-5 py-3.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
           >
             View my work ↓
-          </Link>
+          </a>
         </div>
       </header>
 
