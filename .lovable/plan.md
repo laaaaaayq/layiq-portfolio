@@ -1,4 +1,4 @@
-# Layiq M. — UI/UX Portfolio Site
+# Layiq M — UI/UX Portfolio Site
 
 Rebuild the uploaded HTML template as the site's home page, keeping its exact look: warm off-white background, near-black text, oversized tight-tracked headline, rounded pill button, bordered cards.
 
