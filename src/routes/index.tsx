@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import movieHubCover from "@/assets/movie-hub-cover.png.asset.json";
+import myopCover from "@/assets/myop-cover.jpeg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -36,6 +38,8 @@ function Index() {
       description:
         "A movie booking experience with in-app snack selection and split payment, allowing friends to manage their individual payments.",
       tags: ["UX Research", "UI Design", "Prototype"],
+      cover: movieHubCover.url,
+      coverAlt: "Movie Hub booking app cover showing vintage cinema props",
     },
     {
       title: "Melo — Music Streaming Platform",
@@ -48,6 +52,8 @@ function Index() {
       description:
         "An e-commerce website concept covering product discovery, product selection, cart, and payment.",
       tags: ["UI Design", "UX Flow", "Figma"],
+      cover: myopCover.url,
+      coverAlt: "MyOP e-commerce website cover showing perfume bottles",
     },
   ];
 
@@ -156,9 +162,20 @@ function Index() {
               key={project.title}
               className="overflow-hidden rounded-[22px] border border-border bg-card"
             >
-              <div className="flex h-[330px] items-center justify-center bg-[#e8e8e3] text-xs text-[#999]">
-                ADD PROJECT MOCKUPS HERE
-              </div>
+              {project.cover ? (
+                <div className="h-[330px] overflow-hidden bg-[#e8e8e3]">
+                  <img
+                    src={project.cover}
+                    alt={project.coverAlt}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              ) : (
+                <div className="flex h-[330px] items-center justify-center bg-[#e8e8e3] text-xs text-[#999]">
+                  ADD PROJECT MOCKUPS HERE
+                </div>
+              )}
               <div className="p-6">
                 <h3 className="text-[25px] font-semibold tracking-[-0.02em]">
                   {project.title}
