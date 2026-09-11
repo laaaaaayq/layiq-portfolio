@@ -79,13 +79,13 @@ function Index() {
         <div className="text-[22px] font-extrabold tracking-tight">LAYIQ M</div>
         <div className="hidden md:flex">
           {navLinks.map((link) => (
-            <Link
+            <a
               key={link.href}
-              to={link.href}
+              href={link.href}
               className="ml-6 text-sm text-foreground hover:opacity-70"
             >
               {link.label}
-            </Link>
+            </a>
           ))}
         </div>
       </nav>
