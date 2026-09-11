@@ -4,7 +4,7 @@ Rebuild the uploaded HTML template as the site's home page, keeping its exact lo
 
 ## Page sections (single scrolling page)
 
-1. **Nav** — "LAYIQ M." wordmark left; Work / About / Skills / Contact links right, smooth-scrolling to sections. Links hide on small screens.
+1. **Nav** — "LAYIQ M" wordmark left; Work / About / Skills / Contact links right, smooth-scrolling to sections. Links hide on small screens.
 2. **Hero** — eyebrow "Aspiring UI/UX Designer", the large headline, intro paragraph, and a "View my work ↓" pill button.
 3. **About** — two-column layout (label + heading on the left, three paragraphs on the right), stacking on mobile.
 4. **Projects** — three cards in a two-column grid: Movie Ticket Booking App, Melo Music Streaming, MyOP E-commerce. Each has an image area, title, description, and tags.
