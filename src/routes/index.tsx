@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import movieHubCover from "@/assets/movie-hub-cover.png.asset.json";
+import lyroCover from "@/assets/lyro-cover.jpeg.asset.json";
 import myopCover from "@/assets/myop-cover.jpeg.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -42,18 +43,20 @@ function Index() {
       coverAlt: "Movie Hub booking app cover showing vintage cinema props",
     },
     {
-      title: "Melo — Music Streaming Platform",
+      title: "LYRO - Music Streaming Platform",
       description:
         "A modern music streaming website concept focused on high-fidelity audio, curated discovery, and South Indian music.",
       tags: ["UI/UX", "Web Design", "Figma"],
+      cover: lyroCover.url,
+      coverAlt: "LYRO music streaming platform cover showing a live concert",
     },
     {
-      title: "MyOP — E-commerce Website",
+      title: "MYOP - E Commerce Website Replica",
       description:
         "An e-commerce website concept covering product discovery, product selection, cart, and payment.",
       tags: ["UI Design", "UX Flow", "Figma"],
       cover: myopCover.url,
-      coverAlt: "MyOP e-commerce website cover showing perfume bottles",
+      coverAlt: "MYOP e-commerce website cover showing perfume bottles",
     },
   ];
 
