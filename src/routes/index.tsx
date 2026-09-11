@@ -59,6 +59,14 @@ function Index() {
       cover: myopCover.url,
       coverAlt: "MYOP e-commerce website cover showing perfume bottles",
     },
+    {
+      title: "MOVIE HUB — Movie & Series Dashboard",
+      description:
+        "A modern streaming experience for discovering and watching movies and TV series, with an intuitive dashboard focused on content discovery and seamless navigation.",
+      tags: ["UI/UX", "Dashboard", "Figma"],
+      cover: movieHubDashboardCover.url,
+      coverAlt: "MOVIE HUB dashboard showing movie and series streaming interface",
+    },
   ];
 
   const skills = [
