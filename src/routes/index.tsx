@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import movieHubCover from "@/assets/movie-hub-cover.png.asset.json";
 import lyroCover from "@/assets/lyro-cover.jpeg.asset.json";
 import myopCover from "@/assets/myop-cover.jpeg.asset.json";
+import movieHubDashboardCover from "@/assets/movie-hub-dashboard.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -57,6 +58,14 @@ function Index() {
       tags: ["UI Design", "UX Flow", "Figma"],
       cover: myopCover.url,
       coverAlt: "MYOP e-commerce website cover showing perfume bottles",
+    },
+    {
+      title: "MOVIE HUB — Movie & Series Dashboard",
+      description:
+        "A modern streaming experience for discovering and watching movies and TV series, with an intuitive dashboard focused on content discovery and seamless navigation.",
+      tags: ["UI/UX", "Dashboard", "Figma"],
+      cover: movieHubDashboardCover.url,
+      coverAlt: "MOVIE HUB dashboard showing movie and series streaming interface",
     },
   ];
 
