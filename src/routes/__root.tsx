@@ -114,10 +114,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const themeScript = `
+    (function () {
+      try {
+        var stored = window.localStorage.getItem("layiq-theme");
+        var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (stored === "dark" || (!stored && prefersDark)) {
+          document.documentElement.classList.add("dark");
+        }
+      } catch (e) {}
+    })();
+  `;
+
   return (
     <html lang="en">
       <head>
         <HeadContent />
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>
         {children}

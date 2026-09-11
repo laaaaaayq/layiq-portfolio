@@ -3,6 +3,7 @@ import movieHubCover from "@/assets/movie-hub-cover.png.asset.json";
 import lyroCover from "@/assets/lyro-cover.jpeg.asset.json";
 import myopCover from "@/assets/myop-cover.jpeg.asset.json";
 import movieHubDashboardCover from "@/assets/movie-hub-dashboard.png.asset.json";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -95,16 +96,19 @@ function Index() {
     <div className="mx-auto w-[min(1120px,90%)]">
       <nav className="flex items-center justify-between py-7">
         <div className="text-[22px] font-extrabold tracking-tight">LAYIQ M</div>
-        <div className="hidden md:flex">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="ml-6 text-sm text-foreground hover:opacity-70"
-            >
-              {link.label}
-            </a>
-          ))}
+        <div className="flex items-center gap-4">
+          <div className="hidden md:flex">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="ml-6 text-sm text-foreground hover:opacity-70"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+          <ThemeToggle />
         </div>
       </nav>
 
