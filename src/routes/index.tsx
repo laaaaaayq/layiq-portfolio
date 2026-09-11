@@ -3,6 +3,7 @@ import movieHubCover from "@/assets/movie-hub-cover.png.asset.json";
 import lyroCover from "@/assets/lyro-cover.jpeg.asset.json";
 import myopCover from "@/assets/myop-cover.jpeg.asset.json";
 import movieHubDashboardCover from "@/assets/movie-hub-dashboard.png.asset.json";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export const Route = createFileRoute("/")({
   head: () => ({
