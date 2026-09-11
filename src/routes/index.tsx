@@ -94,20 +94,21 @@ function Index() {
 
   return (
     <div className="mx-auto w-[min(1120px,90%)]">
-      <nav className="flex items-center justify-between py-7">
+      <nav className="relative flex items-center justify-between py-7">
         <div className="text-[22px] font-extrabold tracking-tight">LAYIQ M</div>
-        <div className="flex items-center gap-4">
-          <div className="hidden md:flex">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="ml-6 text-sm text-foreground hover:opacity-70"
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
+        <div className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-5 md:flex">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-sm text-foreground hover:opacity-70"
+            >
+              {link.label}
+            </a>
+          ))}
+          <ThemeToggle />
+        </div>
+        <div className="flex md:hidden">
           <ThemeToggle />
         </div>
       </nav>
