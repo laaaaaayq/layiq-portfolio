@@ -162,9 +162,20 @@ function Index() {
               key={project.title}
               className="overflow-hidden rounded-[22px] border border-border bg-card"
             >
-              <div className="flex h-[330px] items-center justify-center bg-[#e8e8e3] text-xs text-[#999]">
-                ADD PROJECT MOCKUPS HERE
-              </div>
+              {project.cover ? (
+                <div className="h-[330px] overflow-hidden bg-[#e8e8e3]">
+                  <img
+                    src={project.cover}
+                    alt={project.coverAlt}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              ) : (
+                <div className="flex h-[330px] items-center justify-center bg-[#e8e8e3] text-xs text-[#999]">
+                  ADD PROJECT MOCKUPS HERE
+                </div>
+              )}
               <div className="p-6">
                 <h3 className="text-[25px] font-semibold tracking-[-0.02em]">
                   {project.title}
