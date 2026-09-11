@@ -10,7 +10,7 @@ Rebuild the uploaded HTML template as the site's home page, keeping its exact lo
 4. **Projects** — three cards in a two-column grid: Movie Ticket Booking App, Melo Music Streaming, MyOP E-commerce. Each has an image area, title, description, and tags.
 5. **Skills** — four blocks: UX Design, UI Design, Tools, My Approach.
 6. **Contact** — centred heading and paragraph, plus three linked cards: phone, email, LinkedIn (all live links).
-7. **Footer** — copyright left, "UI/UX Designer" right.
+7. **Footer** — "© 2026 Layiq M" left, "UI/UX Designer" right.
 
 ## Project images
 
