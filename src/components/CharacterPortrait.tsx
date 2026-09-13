@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 
 import layiqCharacter from "@/assets/layiq-character-black-shirt.png";
 
-const MAX_EYE_TRAVEL = 6;
+const MAX_EYE_TRAVEL = 2.5;
 
 export function CharacterPortrait() {
   const portraitRef = useRef<HTMLDivElement>(null);
