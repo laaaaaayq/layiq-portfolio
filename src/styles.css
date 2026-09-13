@@ -235,22 +235,33 @@
 .character-eye {
   position: absolute;
   z-index: 20;
-  top: 26.4%;
-  width: 2.5%;
-  aspect-ratio: 0.56;
+  top: 27.15%;
+  width: 2.15%;
+  height: 1.45%;
   border-radius: 999px;
-  background: var(--color-character-pupil);
-  transform: translate(var(--eye-x), var(--eye-y));
-  transition: transform 80ms ease-out;
+  overflow: hidden;
   pointer-events: none;
 }
 
+.character-eye::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 42%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--color-character-pupil);
+  content: "";
+  transform: translate(calc(-50% + var(--eye-x)), calc(-50% + var(--eye-y)));
+  transition: transform 110ms ease-out;
+}
+
 .character-eye-left {
-  left: 43.8%;
+  left: 43.95%;
 }
 
 .character-eye-right {
-  left: 53.8%;
+  left: 53.95%;
 }
 
 .reveal {
@@ -269,5 +280,5 @@
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { animation: none; }
-  .character-eye { transition: none; }
+  .character-eye::after { transition: none; }
 }
