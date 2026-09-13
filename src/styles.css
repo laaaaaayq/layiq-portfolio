@@ -51,7 +51,6 @@
   --color-nav: var(--nav);
   --color-accent-soft: var(--accent-soft);
   --color-project-caption: var(--project-caption);
-  --color-character-pupil: var(--character-pupil);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
@@ -91,7 +90,6 @@
   --nav: oklch(0.98 0.008 196);
   --accent-soft: oklch(0.88 0.055 190);
   --project-caption: oklch(0.98 0.008 196);
-  --character-pupil: oklch(0.2 0.018 244);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -130,7 +128,6 @@
   --nav: oklch(0.2 0.016 196);
   --accent-soft: oklch(0.27 0.045 190);
   --project-caption: oklch(0.18 0.015 196);
-  --character-pupil: oklch(0.2 0.018 244);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -224,46 +221,6 @@
   background-size: 24px 24px;
 }
 
-.character-portrait {
-  --eye-x: 0px;
-  --eye-y: 0px;
-  position: relative;
-  z-index: 10;
-  width: 100%;
-}
-
-.character-eye {
-  position: absolute;
-  z-index: 20;
-  top: 27.15%;
-  width: 2.15%;
-  height: 1.45%;
-  border-radius: 999px;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.character-eye::after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 42%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: var(--color-character-pupil);
-  content: "";
-  transform: translate(calc(-50% + var(--eye-x)), calc(-50% + var(--eye-y)));
-  transition: transform 110ms ease-out;
-}
-
-.character-eye-left {
-  left: 43.95%;
-}
-
-.character-eye-right {
-  left: 53.95%;
-}
-
 .reveal {
   animation: reveal-up 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -280,5 +237,4 @@
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { animation: none; }
-  .character-eye::after { transition: none; }
 }

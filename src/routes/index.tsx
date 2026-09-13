@@ -3,7 +3,7 @@ import movieHubCover from "@/assets/movie-hub-cover.png.asset.json";
 import lyroCover from "@/assets/lyro-cover.jpeg.asset.json";
 import myopCover from "@/assets/myop-cover.jpeg.asset.json";
 import movieHubDashboardCover from "@/assets/movie-hub-dashboard.png.asset.json";
-import { CharacterPortrait } from "@/components/CharacterPortrait";
+import layiqCharacter from "@/assets/layiq-character.png";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 export const Route = createFileRoute("/")({
@@ -150,7 +150,7 @@ function Index() {
           <div className="reveal relative mx-auto flex w-full max-w-[320px] items-end justify-center self-end md:self-center">
             <div className="absolute inset-x-3 bottom-3 h-2/3 rounded-full border border-accent/25 bg-accent-soft" />
             <div className="character-grid absolute inset-x-0 bottom-3 h-2/3 rounded-full opacity-50" />
-            <CharacterPortrait />
+            <img src={layiqCharacter} alt="Illustrated portrait of Layiq M" className="relative z-10 w-full object-contain drop-shadow-character" />
             <span className="absolute -right-2 bottom-8 z-20 bg-background px-3 py-1 text-xs text-muted-foreground">Designing with intent</span>
           </div>
         </header>
