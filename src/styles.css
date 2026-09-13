@@ -233,21 +233,21 @@
   position: absolute;
   z-index: 20;
   top: 26.4%;
-  width: 4.1%;
-  aspect-ratio: 0.75;
+  width: 2.5%;
+  aspect-ratio: 0.56;
   border-radius: 999px;
-  background: oklch(0.2 0.018 244);
+  background: var(--color-foreground);
   transform: translate(var(--eye-x), var(--eye-y));
   transition: transform 80ms ease-out;
   pointer-events: none;
 }
 
 .character-eye-left {
-  left: 43.1%;
+  left: 43.8%;
 }
 
 .character-eye-right {
-  left: 53.1%;
+  left: 53.8%;
 }
 
 .reveal {
