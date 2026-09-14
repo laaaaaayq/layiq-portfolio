@@ -118,15 +118,16 @@ function RootShell({ children }: { children: ReactNode }) {
     (function () {
       try {
         var stored = window.localStorage.getItem("layiq-theme");
-        if (stored !== "light") {
-          document.documentElement.classList.add("dark");
+        if (stored === "light") {
+          document.documentElement.classList.remove("dark");
         }
       } catch (e) {}
     })();
   `;
 
   return (
-    <html lang="en">
+    <html lang="en" className="dark" suppressHydrationWarning>
+
       <head>
         <HeadContent />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
