@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import movieHubCover from "@/assets/movie-hub-cover.png.asset.json";
-import lyroCover from "@/assets/lyro-cover.jpeg.asset.json";
-import myopCover from "@/assets/myop-cover.jpeg.asset.json";
-import movieHubDashboardCover from "@/assets/movie-hub-dashboard.png.asset.json";
-import layiqCharacter from "@/assets/layiq-hero.png.asset.json";
+import movieHubCover from "@/assets/movie-hub-cover.jpg";
+import lyroCover from "@/assets/lyro-cover.jpg";
+import myopCover from "@/assets/myop-cover.jpg";
+import movieHubDashboardCover from "@/assets/movie-hub-dashboard.png";
+import layiqCharacter from "@/assets/layiq-hero.png";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 export const Route = createFileRoute("/")({
@@ -43,7 +43,7 @@ const projects = [
     description:
       "A movie booking experience with in-app snack selection and split payment, allowing friends to manage their individual payments.",
     tags: ["UX Research", "UI Design", "Prototype"],
-    cover: movieHubCover.url,
+    cover: movieHubCover,
     coverAlt: "Movie Hub booking app cover showing vintage cinema props",
   },
   {
@@ -53,7 +53,7 @@ const projects = [
     description:
       "A modern music streaming website concept focused on high-fidelity audio, curated discovery, and South Indian music.",
     tags: ["UI/UX", "Web Design", "Figma"],
-    cover: lyroCover.url,
+    cover: lyroCover,
     coverAlt: "LYRO music streaming platform cover showing a live concert",
   },
   {
@@ -63,7 +63,7 @@ const projects = [
     description:
       "An e-commerce website concept covering product discovery, product selection, cart, and payment.",
     tags: ["UI Design", "UX Flow", "Figma"],
-    cover: myopCover.url,
+    cover: myopCover,
     coverAlt: "MYOP e-commerce website cover showing perfume bottles",
   },
   {
@@ -73,7 +73,7 @@ const projects = [
     description:
       "A modern streaming experience for discovering and watching movies and TV series, with an intuitive dashboard focused on content discovery and seamless navigation.",
     tags: ["UI/UX", "Dashboard", "Figma"],
-    cover: movieHubDashboardCover.url,
+    cover: movieHubDashboardCover,
     coverAlt: "MOVIE HUB dashboard showing movie and series streaming interface",
   },
 ];
@@ -148,7 +148,7 @@ function Index() {
           </div>
 
           <div className="reveal relative mx-auto flex w-full max-w-[320px] items-end justify-center self-end md:self-center">
-            <img src={layiqCharacter.url} alt="Portrait of Layiq M" className="relative z-10 w-full object-contain drop-shadow-character -translate-x-4 -translate-y-10" />
+            <img src={layiqCharacter} alt="Portrait of Layiq M" className="relative z-10 w-full object-contain drop-shadow-character -translate-x-4 -translate-y-10" />
           </div>
         </header>
 
