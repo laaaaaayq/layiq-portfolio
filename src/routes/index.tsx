@@ -148,7 +148,7 @@ function Index() {
           </div>
 
           <div className="reveal relative mx-auto flex w-full max-w-[320px] items-end justify-center self-end md:self-center">
-            <img src={layiqCharacter} alt="Portrait of Layiq M" className="relative z-10 w-full object-contain drop-shadow-character -translate-x-4 -translate-y-10" />
+            <img src={layiqCharacter} alt="Portrait of Layiq M" className="relative z-10 w-full aspect-square rounded-full object-cover drop-shadow-character" />
           </div>
         </header>
 
