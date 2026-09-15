@@ -13,7 +13,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Portfolio of Layiq M, an aspiring UI/UX designer creating simple, intuitive digital experiences.",
+          "Portfolio of Layiq M, a UI/UX designer creating simple, intuitive digital experiences.",
       },
       { property: "og:title", content: "Layiq M — UI/UX Designer" },
       {
@@ -29,8 +29,8 @@ export const Route = createFileRoute("/")({
 });
 
 const navLinks = [
-  { label: "Work", href: "#work" },
   { label: "About", href: "#about" },
+  { label: "Work", href: "#work" },
   { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];
@@ -140,7 +140,7 @@ function Index() {
               Designing digital experiences that feel <span className="text-accent">effortless.</span>
             </h1>
             <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
-              I’m Layiq, an aspiring UI/UX designer passionate about understanding users, solving design problems, and turning ideas into meaningful digital products.
+              I’m Layiq, a UI/UX designer passionate about understanding users, solving design problems, and turning ideas into meaningful digital products.
             </p>
             <a href="#work" className="inline-flex items-center gap-3 border-b border-accent pb-2 text-sm font-semibold text-foreground transition-colors hover:text-accent">
               Explore selected work <ArrowIcon />
@@ -148,10 +148,7 @@ function Index() {
           </div>
 
           <div className="reveal relative mx-auto flex w-full max-w-[320px] items-end justify-center self-end md:self-center">
-            <div className="absolute inset-x-3 bottom-3 h-2/3 rounded-full border border-accent/25 bg-accent-soft" />
-            <div className="character-grid absolute inset-x-0 bottom-3 h-2/3 rounded-full opacity-50" />
             <img src={layiqCharacter.url} alt="Portrait of Layiq M" className="relative z-10 w-full object-contain drop-shadow-character -translate-x-4 -translate-y-10" />
-            <span className="absolute -right-2 bottom-8 z-20 bg-background px-3 py-1 text-xs text-muted-foreground">Designing with intent</span>
           </div>
         </header>
 
@@ -176,7 +173,7 @@ function Index() {
             <h2 className="mt-4 text-4xl font-semibold">Thoughtful design starts with understanding.</h2>
           </div>
           <div className="space-y-5 text-lg leading-relaxed text-muted-foreground">
-            <p>I’m an aspiring UI/UX designer with a background in Computer Applications and a growing passion for creating meaningful digital experiences.</p>
+            <p>I’m a UI/UX designer with a background in Computer Applications and a growing passion for creating meaningful digital experiences.</p>
             <p>My interest in UI/UX comes from combining creativity with problem-solving. I enjoy understanding user needs, organizing information, creating intuitive user flows, and transforming ideas into clean and engaging interfaces.</p>
             <p>I’m currently developing my skills in user research, wireframing, prototyping, interaction design, and visual design through practical projects.</p>
           </div>
