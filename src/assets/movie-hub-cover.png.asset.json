@@ -1,11 +1,11 @@
 {
-  "version": 1,
-  "asset_id": "ca1a17b7-9dbe-48bd-88a0-5860927482b8",
-  "project_id": "2d58bddf-8b84-4c6f-9fd0-8cbbc41faa15",
-  "url": "/__l5e/assets-v1/ca1a17b7-9dbe-48bd-88a0-5860927482b8/movie-hub-cover.png",
-  "r2_key": "a/v1/2d58bddf-8b84-4c6f-9fd0-8cbbc41faa15/ca1a17b7-9dbe-48bd-88a0-5860927482b8/movie-hub-cover.png",
-  "original_filename": "movie-hub-cover.png",
-  "size": 937263,
-  "content_type": "image/png",
-  "created_at": "2026-09-11T12:13:58Z"
+    "version":  1,
+    "asset_id":  "ca1a17b7-9dbe-48bd-88a0-5860927482b8",
+    "project_id":  "2d58bddf-8b84-4c6f-9fd0-8cbbc41faa15",
+    "url":  "https://layiq-portfolio.lovable.app/__l5e/assets-v1/ca1a17b7-9dbe-48bd-88a0-5860927482b8/movie-hub-cover.png",
+    "r2_key":  "a/v1/2d58bddf-8b84-4c6f-9fd0-8cbbc41faa15/ca1a17b7-9dbe-48bd-88a0-5860927482b8/movie-hub-cover.png",
+    "original_filename":  "movie-hub-cover.png",
+    "size":  937263,
+    "content_type":  "image/png",
+    "created_at":  "2026-09-11T12:13:58Z"
 }
