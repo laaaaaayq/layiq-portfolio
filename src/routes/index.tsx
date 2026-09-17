@@ -118,7 +118,7 @@ function Index() {
     <main className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
       <CursorGlow />
       <nav className="sticky top-4 z-50 mx-auto flex w-[min(92%,920px)] items-center justify-between rounded-full border border-border bg-nav/90 px-4 py-2.5 shadow-nav backdrop-blur-md">
-        <a href="#top" className="text-sm font-semibold text-foreground" aria-label="Layiq M, back to top">
+        <a href="#top" className="text-lg sm:text-xl font-bold tracking-tight text-foreground" aria-label="Layiq M, back to top">
           Layiq M
         </a>
         <div className="hidden items-center gap-6 sm:flex">
