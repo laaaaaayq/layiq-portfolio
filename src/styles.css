@@ -68,14 +68,14 @@
 
 :root {
   --radius: 0.5rem;
-  --background: oklch(0.97 0.01 196);
+  --background: #F2E8CF;
   --foreground: oklch(0.17 0.012 196);
   --card: oklch(0.94 0.014 196);
   --card-foreground: oklch(0.17 0.012 196);
   --popover: oklch(0.98 0.008 196);
   --popover-foreground: oklch(0.17 0.012 196);
   --primary: oklch(0.17 0.012 196);
-  --primary-foreground: oklch(0.97 0.01 196);
+  --primary-foreground: #F2E8CF;
   --secondary: oklch(0.92 0.016 196);
   --secondary-foreground: oklch(0.17 0.012 196);
   --muted: oklch(0.92 0.012 196);
@@ -87,7 +87,7 @@
   --border: oklch(0.84 0.02 196);
   --input: oklch(0.84 0.02 196);
   --ring: oklch(0.72 0.105 190);
-  --nav: oklch(0.98 0.008 196);
+  --nav: #F2E8CF;
   --accent-soft: oklch(0.88 0.055 190);
   --project-caption: oklch(0.98 0.008 196);
   --chart-1: oklch(0.646 0.222 41.116);
@@ -103,6 +103,12 @@
   --sidebar-accent-foreground: oklch(0.145 0 0);
   --sidebar-border: oklch(0.88 0.01 98);
   --sidebar-ring: oklch(0.45 0 0);
+}
+
+html:not(.dark),
+html:not(.dark) body,
+html:not(.dark) main {
+  background-color: #F2E8CF !important;
 }
 
 .dark {
