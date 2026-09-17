@@ -1,31 +1,35 @@
 import { useEffect, useState } from "react";
 
 export function CursorGlow() {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [mounted, setMounted] = useState(false);
+  const [position, setPosition] = useState({ x: -1000, y: -1000 });
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     const handleMouseMove = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
+      setVisible(true);
+    };
+    const handleMouseLeave = () => {
+      setVisible(false);
     };
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseleave", handleMouseLeave);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseleave", handleMouseLeave);
+    };
   }, []);
-
-  if (!mounted) return null;
 
   return (
     <div
-      className="pointer-events-none fixed inset-0 z-[99999] transition-[background] duration-75 ease-out"
+      className={`pointer-events-none fixed inset-0 z-0 transition-opacity duration-300 ease-out ${
+        visible ? "opacity-100" : "opacity-0"
+      }`}
       style={{
-        background: `
-          radial-gradient(48px circle at ${position.x}px ${position.y}px, rgba(34, 227, 159, 0.55), transparent 70%),
-          radial-gradient(320px circle at ${position.x}px ${position.y}px, rgba(34, 227, 159, 0.22), transparent 60%),
-          radial-gradient(720px circle at ${position.x}px ${position.y}px, rgba(34, 227, 159, 0.08), transparent 50%)
-        `,
+        background: `radial-gradient(650px circle at ${position.x}px ${position.y}px, rgba(34, 227, 159, 0.13) 0%, rgba(34, 227, 159, 0.04) 45%, transparent 70%)`,
       }}
       aria-hidden="true"
     />
   );
 }
+

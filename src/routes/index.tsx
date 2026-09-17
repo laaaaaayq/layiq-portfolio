@@ -5,6 +5,7 @@ import myopCover from "@/assets/myop-cover.jpg";
 import movieHubDashboardCover from "@/assets/movie-hub-dashboard.png";
 import layiqCharacter from "@/assets/layiq-hero.png";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { CursorGlow } from "@/components/CursorGlow";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -114,7 +115,8 @@ function ArrowIcon() {
 
 function Index() {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-background text-foreground">
+    <main className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
+      <CursorGlow />
       <nav className="sticky top-4 z-50 mx-auto flex w-[min(92%,920px)] items-center justify-between rounded-full border border-border bg-nav/90 px-4 py-2.5 shadow-nav backdrop-blur-md">
         <a href="#top" className="text-sm font-semibold text-foreground" aria-label="Layiq M, back to top">
           Layiq M
@@ -129,7 +131,7 @@ function Index() {
         <ThemeToggle />
       </nav>
 
-      <div id="top" className="mx-auto w-[min(92%,920px)]">
+      <div id="top" className="relative z-10 mx-auto w-[min(92%,920px)]">
         <header className="grid min-h-[680px] scroll-mt-24 items-center gap-10 py-20 md:grid-cols-[1.3fr_0.7fr] md:py-28">
           <div className="reveal space-y-7">
             <div className="flex items-center gap-3 text-xs font-medium uppercase text-accent">
