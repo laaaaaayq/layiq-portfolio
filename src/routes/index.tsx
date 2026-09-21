@@ -301,20 +301,20 @@ function Index() {
                   <div
                     className={`absolute -left-[33px] sm:-left-[41px] top-1 z-10 h-4 w-4 sm:h-[18px] sm:w-[18px] rounded-full border-2 border-background transition-all duration-300 group-hover:scale-125 ${
                       item.isCurrent
-                        ? "bg-accent border-accent shadow-[0_0_18px_var(--color-accent)] ring-4 ring-accent/25"
-                        : "bg-slate-300 dark:bg-[#323E4E] group-hover:!bg-accent dark:group-hover:!bg-accent group-hover:!border-accent group-hover:shadow-[0_0_18px_var(--color-accent)] group-hover:ring-4 group-hover:ring-accent/30"
+                        ? "bg-[#59cdc6] border-[#59cdc6] shadow-[0_0_18px_#59cdc6] ring-4 ring-[#59cdc6]/30"
+                        : "bg-slate-300 dark:bg-[#323E4E] group-hover:!bg-[#59cdc6] dark:group-hover:!bg-[#59cdc6] group-hover:!border-[#59cdc6] group-hover:shadow-[0_0_20px_#59cdc6] group-hover:ring-4 group-hover:ring-[#59cdc6]/40"
                     }`}
                   />
 
                   {/* Period & Tag */}
                   <div className="flex flex-wrap items-center gap-2.5">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-accent">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-[#59cdc6]">
                       {item.period}
                     </span>
                     <span
                       className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-medium ${
                         item.isCurrent
-                          ? "border border-accent/30 bg-accent/15 text-accent"
+                          ? "border border-[#59cdc6]/30 bg-[#59cdc6]/15 text-[#59cdc6]"
                           : "bg-muted text-muted-foreground"
                       }`}
                     >
@@ -323,7 +323,7 @@ function Index() {
                   </div>
 
                   {/* Title & Organization */}
-                  <h3 className="mt-2 text-xl font-semibold text-foreground transition-colors group-hover:text-accent">
+                  <h3 className="mt-2 text-xl font-semibold text-foreground transition-colors group-hover:text-[#59cdc6]">
                     {item.title}
                   </h3>
                   <p className="mt-1 text-sm font-medium text-muted-foreground">
