@@ -33,7 +33,42 @@ const navLinks = [
   { label: "About", href: "#about" },
   { label: "Work", href: "#work" },
   { label: "Skills", href: "#skills" },
+  { label: "Journey", href: "#journey" },
   { label: "Contact", href: "#contact" },
+];
+
+const journeyItems = [
+  {
+    period: "2020",
+    title: "Higher Secondary Examination (HSE)",
+    organization: "General Education",
+    badge: "Education",
+  },
+  {
+    period: "2020 – 2023",
+    title: "Bachelor of Computer Application (BCA)",
+    organization: "University of Calicut",
+    badge: "Degree",
+  },
+  {
+    period: "June 2023 – December 2023",
+    title: "Python - Django Internship",
+    organization: "Softroniics · Calicut, Kerala",
+    badge: "Internship",
+  },
+  {
+    period: "March 2025 – April 2026",
+    title: "Cashier",
+    organization: "Dubai Customs (under Transguard Group)",
+    badge: "Experience",
+  },
+  {
+    period: "June 2026 – Present",
+    title: "UI/UX Designer Intern",
+    organization: "Zoople Technologies",
+    badge: "Present",
+    isCurrent: true,
+  },
 ];
 
 const projects = [
@@ -249,8 +284,63 @@ function Index() {
           </div>
         </section>
 
+        <section id="journey" className="scroll-mt-28 border-t border-border py-28">
+          <div className="grid gap-10 md:grid-cols-[0.7fr_1.3fr]">
+            <div>
+              <p className="section-label">04 / Journey</p>
+              <h2 className="mt-4 text-4xl font-semibold">My Roadmap</h2>
+              <p className="mt-4 max-w-sm leading-relaxed text-muted-foreground">
+                Key milestones across education, engineering, international experience, and UI/UX design.
+              </p>
+            </div>
+
+            <div className="relative ml-3 space-y-10 border-l border-border pl-6 sm:ml-4 sm:pl-8">
+              {journeyItems.map((item) => (
+                <div key={item.title + item.period} className="group relative">
+                  {/* Timeline node */}
+                  <div
+                    className={`absolute -left-[33px] sm:-left-[41px] top-1 flex h-4 w-4 sm:h-[18px] sm:w-[18px] items-center justify-center rounded-full border-2 border-background transition-all duration-300 group-hover:scale-125 ${
+                      item.isCurrent
+                        ? "bg-accent shadow-status ring-4 ring-accent/20"
+                        : "bg-muted-foreground/30 group-hover:bg-accent"
+                    }`}
+                  >
+                    {item.isCurrent && (
+                      <span className="h-1.5 w-1.5 rounded-full bg-background animate-pulse" />
+                    )}
+                  </div>
+
+                  {/* Period & Tag */}
+                  <div className="flex flex-wrap items-center gap-2.5">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-accent">
+                      {item.period}
+                    </span>
+                    <span
+                      className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-medium ${
+                        item.isCurrent
+                          ? "border border-accent/30 bg-accent/15 text-accent"
+                          : "bg-muted text-muted-foreground"
+                      }`}
+                    >
+                      {item.badge}
+                    </span>
+                  </div>
+
+                  {/* Title & Organization */}
+                  <h3 className="mt-2 text-xl font-semibold text-foreground transition-colors group-hover:text-accent">
+                    {item.title}
+                  </h3>
+                  <p className="mt-1 text-sm font-medium text-muted-foreground">
+                    {item.organization}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section id="contact" className="scroll-mt-28 border-t border-border py-28">
-          <p className="section-label">04 / Contact</p>
+          <p className="section-label">05 / Contact</p>
           <div className="mt-8 grid gap-12 md:grid-cols-[1.25fr_0.75fr] md:items-end">
             <div>
               <h2 className="text-5xl font-semibold sm:text-6xl">Let’s create something meaningful.</h2>
