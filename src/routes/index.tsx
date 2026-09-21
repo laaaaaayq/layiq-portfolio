@@ -39,7 +39,7 @@ const navLinks = [
 const projects = [
   {
     number: "01",
-    title: "Movie Ticket Booking App",
+    title: "MOVIE HUB - Movie Ticket Booking App",
     type: "Mobile Experience",
     description:
       "A movie booking experience with in-app snack selection and split payment, allowing friends to manage their individual payments.",
