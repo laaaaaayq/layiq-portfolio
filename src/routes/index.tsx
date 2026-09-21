@@ -46,6 +46,7 @@ const projects = [
     tags: ["UX Research", "UI Design", "Prototype"],
     cover: movieHubCover,
     coverAlt: "Movie Hub booking app cover showing vintage cinema props",
+    url: "https://www.behance.net/gallery/256022671/MOVIE-HUB-Movie-Ticket-Booking-App",
   },
   {
     number: "02",
@@ -56,6 +57,7 @@ const projects = [
     tags: ["UI/UX", "Web Design", "Figma"],
     cover: lyroCover,
     coverAlt: "LYRO music streaming platform cover showing a live concert",
+    url: "https://www.behance.net/gallery/256021393/LYRO-Music-Streaming-Website",
   },
   {
     number: "03",
@@ -66,6 +68,7 @@ const projects = [
     tags: ["UI Design", "UX Flow", "Figma"],
     cover: myopCover,
     coverAlt: "MYOP e-commerce website cover showing perfume bottles",
+    url: "https://www.behance.net/gallery/253939589/MYOP-Website-Design",
   },
   {
     number: "04",
@@ -76,6 +79,7 @@ const projects = [
     tags: ["UI/UX", "Dashboard", "Figma"],
     cover: movieHubDashboardCover,
     coverAlt: "MOVIE HUB dashboard showing movie and series streaming interface",
+    url: "https://www.behance.net/gallery/256033873/MOVIE-HUB-Movie-Series-Dashboard",
   },
 ];
 
@@ -197,10 +201,27 @@ function Index() {
                   <img src={project.cover} alt={project.coverAlt} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]" />
                   <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-project-caption/95 px-5 py-3.5 backdrop-blur-sm">
                     <span className="text-xs text-muted-foreground">{project.number} / {project.type}</span>
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full border border-border text-foreground transition-colors group-hover:border-accent group-hover:text-accent"><ArrowIcon /></span>
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View ${project.title} on Behance`}
+                      className="flex h-8 w-8 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:border-accent hover:text-accent group-hover:border-accent group-hover:text-accent"
+                    >
+                      <ArrowIcon />
+                    </a>
                   </div>
                 </div>
-                <h3 className="mt-5 text-xl font-semibold">{project.title}</h3>
+                <h3 className="mt-5 text-xl font-semibold">
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-colors hover:text-accent"
+                  >
+                    {project.title}
+                  </a>
+                </h3>
                 <p className="mt-2 leading-relaxed text-muted-foreground">{project.description}</p>
                 <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
                   {project.tags.map((tag) => <span key={tag} className="text-xs text-accent">{tag}</span>)}
