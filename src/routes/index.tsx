@@ -290,7 +290,7 @@ function Index() {
               <p className="section-label">04 / Journey</p>
               <h2 className="mt-4 text-4xl font-semibold">My Roadmap</h2>
               <p className="mt-4 max-w-sm leading-relaxed text-muted-foreground">
-                Key milestones across education, engineering, international experience, and UI/UX design.
+                Key milestones across education, professional experience, and my journey into UI/UX design.
               </p>
             </div>
 
@@ -299,15 +299,19 @@ function Index() {
                 <div key={item.title + item.period} className="group relative">
                   {/* Timeline node */}
                   <div
-                    className={`absolute -left-[33px] sm:-left-[41px] top-1 flex h-4 w-4 sm:h-[18px] sm:w-[18px] items-center justify-center rounded-full border-2 border-background transition-all duration-300 group-hover:scale-125 ${
+                    className={`absolute -left-[33px] sm:-left-[41px] top-1 z-10 flex h-4 w-4 sm:h-[18px] sm:w-[18px] items-center justify-center rounded-full bg-background border-2 transition-all duration-300 group-hover:scale-125 ${
                       item.isCurrent
-                        ? "bg-accent shadow-status ring-4 ring-accent/20"
-                        : "bg-muted-foreground/30 group-hover:bg-accent"
+                        ? "border-accent shadow-status ring-4 ring-accent/20"
+                        : "border-muted-foreground/50 group-hover:border-accent"
                     }`}
                   >
-                    {item.isCurrent && (
-                      <span className="h-1.5 w-1.5 rounded-full bg-background animate-pulse" />
-                    )}
+                    <span
+                      className={`h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full transition-colors ${
+                        item.isCurrent
+                          ? "bg-accent animate-pulse"
+                          : "bg-muted-foreground/50 group-hover:bg-accent"
+                      }`}
+                    />
                   </div>
 
                   {/* Period & Tag */}
