@@ -296,13 +296,13 @@ function Index() {
 
             <div className="relative ml-3 space-y-10 border-l border-border pl-6 sm:ml-4 sm:pl-8">
               {journeyItems.map((item) => (
-                <div key={item.title + item.period} className="group relative">
+                <div key={item.title + item.period} className="group relative cursor-pointer">
                   {/* Timeline node */}
                   <div
                     className={`absolute -left-[33px] sm:-left-[41px] top-1 z-10 h-4 w-4 sm:h-[18px] sm:w-[18px] rounded-full border-2 border-background transition-all duration-300 group-hover:scale-125 ${
                       item.isCurrent
-                        ? "bg-accent shadow-status ring-4 ring-accent/20"
-                        : "bg-slate-300 dark:bg-[#323E4E] group-hover:bg-accent"
+                        ? "bg-accent border-accent shadow-[0_0_18px_var(--color-accent)] ring-4 ring-accent/25"
+                        : "bg-slate-300 dark:bg-[#323E4E] group-hover:!bg-accent dark:group-hover:!bg-accent group-hover:!border-accent group-hover:shadow-[0_0_18px_var(--color-accent)] group-hover:ring-4 group-hover:ring-accent/30"
                     }`}
                   />
 
