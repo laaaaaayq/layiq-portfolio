@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import movieHubCover from "@/assets/movie-hub-cover.jpg";
 import lyroCover from "@/assets/lyro-cover.jpg";
@@ -6,6 +7,21 @@ import movieHubDashboardCover from "@/assets/movie-hub-dashboard.png";
 import layiqCharacter from "@/assets/layiq-hero.png";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { CursorGlow } from "@/components/CursorGlow";
+
+function MobileMenuIcon({ isOpen }: { isOpen: boolean }) {
+  return isOpen ? (
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <line x1="18" y1="6" x2="6" y2="18" />
+      <line x1="6" y1="6" x2="18" y2="18" />
+    </svg>
+  ) : (
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <line x1="4" x2="20" y1="6" y2="6" />
+      <line x1="4" x2="20" y1="12" y2="12" />
+      <line x1="4" x2="20" y1="18" y2="18" />
+    </svg>
+  );
+}
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -153,34 +169,68 @@ function ArrowIcon() {
 }
 
 function Index() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
       <CursorGlow />
-      <nav className="sticky top-4 z-50 mx-auto flex w-[min(92%,920px)] items-center justify-between rounded-full border border-border bg-nav/90 px-4 py-2.5 shadow-nav backdrop-blur-md">
-        <a href="#top" className="text-lg sm:text-xl font-bold tracking-tight text-foreground" aria-label="Layiq M, back to top">
-          Layiq M
-        </a>
-        <div className="hidden items-center gap-6 sm:flex">
-          {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-              {link.label}
-            </a>
-          ))}
+      <nav className="sticky top-4 z-50 mx-auto flex w-[min(92%,920px)] flex-col rounded-2xl sm:rounded-full border border-border bg-nav/95 px-4 py-2.5 shadow-nav backdrop-blur-md transition-all duration-300">
+        <div className="flex w-full items-center justify-between">
+          <a href="#top" className="text-lg sm:text-xl font-bold tracking-tight text-foreground" aria-label="Layiq M, back to top">
+            Layiq M
+          </a>
+
+          {/* Desktop Nav */}
+          <div className="hidden items-center gap-6 sm:flex">
+            {navLinks.map((link) => (
+              <a key={link.href} href={link.href} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+                {link.label}
+              </a>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            {/* Mobile Hamburger Button */}
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border bg-background text-foreground transition-colors hover:border-accent hover:text-accent sm:hidden"
+            >
+              <MobileMenuIcon isOpen={mobileMenuOpen} />
+            </button>
+          </div>
         </div>
-        <ThemeToggle />
+
+        {/* Mobile Dropdown Menu */}
+        {mobileMenuOpen && (
+          <div className="mt-3 flex flex-col space-y-1 border-t border-border/80 pt-3 sm:hidden">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent/10 hover:text-accent"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        )}
       </nav>
 
       <div id="top" className="relative z-10 mx-auto w-[min(92%,920px)]">
-        <header className="grid min-h-[680px] scroll-mt-24 items-center gap-10 py-20 md:grid-cols-[1.3fr_0.7fr] md:py-28">
-          <div className="reveal space-y-7">
+        <header className="grid min-h-[540px] sm:min-h-[640px] scroll-mt-24 items-center gap-8 sm:gap-10 py-12 sm:py-20 md:grid-cols-[1.3fr_0.7fr] md:py-28">
+          <div className="reveal space-y-5 sm:space-y-7">
             <div className="flex items-center gap-3 text-xs font-medium uppercase text-accent">
               <span className="h-2 w-2 rounded-full bg-accent shadow-status" />
               UI/UX Designer
             </div>
-            <h1 className="max-w-[680px] text-5xl font-bold leading-[0.94] sm:text-6xl md:text-7xl">
+            <h1 className="max-w-[680px] text-4xl sm:text-6xl md:text-7xl font-bold leading-[1.05] sm:leading-[0.94] tracking-tight">
               Designing digital experiences that feel <span className="text-accent">effortless.</span>
             </h1>
-            <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
+            <p className="max-w-xl text-base sm:text-lg leading-relaxed text-muted-foreground">
               I’m Layiq, a UI/UX designer passionate about understanding users, solving design problems, and turning ideas into meaningful digital products.
             </p>
             <a href="#work" className="inline-flex items-center gap-3 border-b border-accent pb-2 text-sm font-semibold text-foreground transition-colors hover:text-accent">
@@ -188,53 +238,53 @@ function Index() {
             </a>
           </div>
 
-          <div className="reveal relative mx-auto flex w-full max-w-[320px] items-end justify-center self-end md:self-center">
+          <div className="reveal relative mx-auto flex w-full max-w-[220px] sm:max-w-[300px] md:max-w-[320px] items-end justify-center self-end md:self-center">
             <img src={layiqCharacter} alt="Portrait of Layiq M" className="relative z-10 w-full aspect-square rounded-full object-cover drop-shadow-character" />
           </div>
         </header>
 
-        <section className="grid border-y border-border py-7 sm:grid-cols-3">
-          <div className="py-3 sm:py-0">
+        <section className="grid border-y border-border py-6 sm:py-7 grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-0">
+          <div className="py-2 sm:py-0">
             <p className="text-xs uppercase text-muted-foreground">Focus</p>
-            <p className="mt-1 font-medium">Useful, intuitive interfaces</p>
+            <p className="mt-1 text-sm sm:text-base font-medium">Useful, intuitive interfaces</p>
           </div>
-          <div className="border-y border-border py-3 sm:border-x sm:border-y-0 sm:px-7 sm:py-0">
+          <div className="border-y border-border py-2 sm:border-x sm:border-y-0 sm:px-7 sm:py-0">
             <p className="text-xs uppercase text-muted-foreground">Selected work</p>
-            <p className="mt-1 font-medium">04 product concepts</p>
+            <p className="mt-1 text-sm sm:text-base font-medium">04 product concepts</p>
           </div>
-          <div className="py-3 sm:pl-7 sm:py-0">
+          <div className="py-2 sm:pl-7 sm:py-0">
             <p className="text-xs uppercase text-muted-foreground">Process</p>
-            <p className="mt-1 font-medium">Research to refinement</p>
+            <p className="mt-1 text-sm sm:text-base font-medium">Research to refinement</p>
           </div>
         </section>
 
-        <section id="about" className="grid scroll-mt-28 gap-10 py-28 md:grid-cols-[0.7fr_1.3fr]">
+        <section id="about" className="grid scroll-mt-28 gap-6 sm:gap-10 py-16 sm:py-24 md:py-28 md:grid-cols-[0.7fr_1.3fr]">
           <div>
             <p className="section-label">01 / About</p>
-            <h2 className="mt-4 text-4xl font-semibold">Thoughtful design starts with understanding.</h2>
+            <h2 className="mt-3 sm:mt-4 text-3xl sm:text-4xl font-semibold">Thoughtful design starts with understanding.</h2>
           </div>
-          <div className="space-y-5 text-lg leading-relaxed text-muted-foreground">
+          <div className="space-y-4 sm:space-y-5 text-base sm:text-lg leading-relaxed text-muted-foreground">
             <p>I’m a UI/UX designer with a background in Computer Applications and a growing passion for creating meaningful digital experiences.</p>
             <p>My interest in UI/UX comes from combining creativity with problem-solving. I enjoy understanding user needs, organizing information, creating intuitive user flows, and transforming ideas into clean and engaging interfaces.</p>
             <p>I’m currently developing my skills in user research, wireframing, prototyping, interaction design, and visual design through practical projects.</p>
           </div>
         </section>
 
-        <section id="work" className="scroll-mt-28 border-t border-border py-28">
-          <div className="mb-10 flex items-end justify-between gap-6 border-b border-border pb-5">
+        <section id="work" className="scroll-mt-28 border-t border-border py-16 sm:py-24 md:py-28">
+          <div className="mb-8 sm:mb-10 flex items-end justify-between gap-6 border-b border-border pb-5">
             <div>
               <p className="section-label">02 / Selected work</p>
-              <h2 className="mt-3 text-4xl font-semibold">Projects</h2>
+              <h2 className="mt-2 sm:mt-3 text-3xl sm:text-4xl font-semibold">Projects</h2>
             </div>
             <span className="text-xs text-muted-foreground">04 projects</span>
           </div>
 
-          <div className="grid gap-x-5 gap-y-12 md:grid-cols-2">
+          <div className="grid gap-x-5 gap-y-10 sm:gap-y-12 grid-cols-1 md:grid-cols-2">
             {projects.map((project) => (
               <article key={project.title} className="group">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-md border border-border bg-card">
                   <img src={project.cover} alt={project.coverAlt} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]" />
-                  <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-project-caption/95 px-5 py-3.5 backdrop-blur-sm">
+                  <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-project-caption/95 px-4 sm:px-5 py-3 sm:py-3.5 backdrop-blur-sm">
                     <span className="text-xs text-muted-foreground">{project.number} / {project.type}</span>
                     <a
                       href={project.url}
@@ -247,7 +297,7 @@ function Index() {
                     </a>
                   </div>
                 </div>
-                <h3 className="mt-5 text-xl font-semibold">
+                <h3 className="mt-4 sm:mt-5 text-lg sm:text-xl font-semibold">
                   <a
                     href={project.url}
                     target="_blank"
@@ -257,8 +307,8 @@ function Index() {
                     {project.title}
                   </a>
                 </h3>
-                <p className="mt-2 leading-relaxed text-muted-foreground">{project.description}</p>
-                <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
+                <p className="mt-2 text-sm sm:text-base leading-relaxed text-muted-foreground">{project.description}</p>
+                <div className="mt-4 flex flex-wrap gap-x-3 sm:gap-x-4 gap-y-2">
                   {project.tags.map((tag) => <span key={tag} className="text-xs text-accent">{tag}</span>)}
                 </div>
               </article>
@@ -266,40 +316,40 @@ function Index() {
           </div>
         </section>
 
-        <section id="skills" className="scroll-mt-28 border-t border-border py-28">
-          <div className="grid gap-10 md:grid-cols-[0.7fr_1.3fr]">
+        <section id="skills" className="scroll-mt-28 border-t border-border py-16 sm:py-24 md:py-28">
+          <div className="grid gap-6 sm:gap-10 md:grid-cols-[0.7fr_1.3fr]">
             <div>
               <p className="section-label">03 / Skills & tools</p>
-              <h2 className="mt-4 text-4xl font-semibold">What I bring to the process.</h2>
+              <h2 className="mt-3 sm:mt-4 text-3xl sm:text-4xl font-semibold">What I bring to the process.</h2>
             </div>
             <div className="divide-y divide-border border-y border-border">
               {skills.map((skill) => (
-                <div key={skill.title} className="grid gap-3 py-6 sm:grid-cols-[48px_150px_1fr]">
-                  <span className="text-xs text-accent">{skill.number}</span>
-                  <h3 className="font-semibold">{skill.title}</h3>
-                  <p className="leading-relaxed text-muted-foreground">{skill.description}</p>
+                <div key={skill.title} className="grid gap-2 sm:gap-3 py-5 sm:py-6 grid-cols-1 sm:grid-cols-[48px_150px_1fr]">
+                  <span className="text-xs text-accent font-semibold">{skill.number}</span>
+                  <h3 className="font-semibold text-foreground">{skill.title}</h3>
+                  <p className="leading-relaxed text-sm sm:text-base text-muted-foreground">{skill.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="journey" className="scroll-mt-28 border-t border-border py-28">
-          <div className="grid gap-10 md:grid-cols-[0.7fr_1.3fr]">
+        <section id="journey" className="scroll-mt-28 border-t border-border py-16 sm:py-24 md:py-28">
+          <div className="grid gap-6 sm:gap-10 md:grid-cols-[0.7fr_1.3fr]">
             <div>
               <p className="section-label">04 / Journey</p>
-              <h2 className="mt-4 text-4xl font-semibold">My Roadmap</h2>
-              <p className="mt-4 max-w-sm leading-relaxed text-muted-foreground">
+              <h2 className="mt-3 sm:mt-4 text-3xl sm:text-4xl font-semibold">My Roadmap</h2>
+              <p className="mt-3 sm:mt-4 max-w-sm leading-relaxed text-sm sm:text-base text-muted-foreground">
                 Key milestones across education, professional experience, and my journey into UI/UX design.
               </p>
             </div>
 
-            <div className="relative ml-3 space-y-10 border-l border-border pl-6 sm:ml-4 sm:pl-8">
+            <div className="relative ml-2.5 sm:ml-4 space-y-8 sm:space-y-10 border-l border-border pl-5 sm:pl-8">
               {journeyItems.map((item) => (
                 <div key={item.title + item.period} className="group relative cursor-pointer">
                   {/* Timeline node */}
                   <div
-                    className={`absolute -left-[33px] sm:-left-[41px] top-1 z-10 h-4 w-4 sm:h-[18px] sm:w-[18px] rounded-full border-2 border-background transition-all duration-300 group-hover:scale-125 ${
+                    className={`absolute -left-[29px] sm:-left-[41px] top-1 z-10 h-4 w-4 sm:h-[18px] sm:w-[18px] rounded-full border-2 border-background transition-all duration-300 group-hover:scale-125 ${
                       item.isCurrent
                         ? "bg-[#59cdc6] border-[#59cdc6] shadow-[0_0_18px_#59cdc6] ring-4 ring-[#59cdc6]/30"
                         : "bg-slate-300 dark:bg-[#323E4E] group-hover:!bg-[#59cdc6] dark:group-hover:!bg-[#59cdc6] group-hover:!border-[#59cdc6] group-hover:shadow-[0_0_20px_#59cdc6] group-hover:ring-4 group-hover:ring-[#59cdc6]/40"
@@ -307,12 +357,12 @@ function Index() {
                   />
 
                   {/* Period & Tag */}
-                  <div className="flex flex-wrap items-center gap-2.5">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-[#59cdc6]">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-[#59cdc6]">
                       {item.period}
                     </span>
                     <span
-                      className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-medium ${
+                      className={`inline-flex items-center rounded-full px-2 sm:px-2.5 py-0.5 text-[10px] sm:text-[11px] font-medium ${
                         item.isCurrent
                           ? "border border-[#59cdc6]/30 bg-[#59cdc6]/15 text-[#59cdc6]"
                           : "bg-muted text-muted-foreground"
@@ -323,10 +373,10 @@ function Index() {
                   </div>
 
                   {/* Title & Organization */}
-                  <h3 className="mt-2 text-xl font-semibold text-foreground transition-colors group-hover:text-[#59cdc6]">
+                  <h3 className="mt-1.5 sm:mt-2 text-base sm:text-xl font-semibold text-foreground transition-colors group-hover:text-[#59cdc6]">
                     {item.title}
                   </h3>
-                  <p className="mt-1 text-sm font-medium text-muted-foreground">
+                  <p className="mt-1 text-xs sm:text-sm font-medium text-muted-foreground">
                     {item.organization}
                   </p>
                 </div>
@@ -335,14 +385,16 @@ function Index() {
           </div>
         </section>
 
-        <section id="contact" className="scroll-mt-28 border-t border-border py-28">
+        <section id="contact" className="scroll-mt-28 border-t border-border py-16 sm:py-24 md:py-28">
           <p className="section-label">05 / Contact</p>
-          <div className="mt-8 grid gap-12 md:grid-cols-[1.25fr_0.75fr] md:items-end">
+          <div className="mt-6 sm:mt-8 grid gap-8 sm:gap-12 md:grid-cols-[1.25fr_0.75fr] md:items-end">
             <div>
-              <h2 className="text-5xl font-semibold sm:text-6xl">Let’s create something meaningful.</h2>
-              <p className="mt-5 max-w-xl text-lg text-muted-foreground">I’m always interested in learning, exploring new ideas, and creating better digital experiences. If you’d like to discuss a project, collaboration, or opportunity, I’d love to connect.</p>
+              <h2 className="text-3xl sm:text-5xl md:text-6xl font-semibold">Let’s create something meaningful.</h2>
+              <p className="mt-4 sm:mt-5 max-w-xl text-base sm:text-lg text-muted-foreground">
+                I’m always interested in learning, exploring new ideas, and creating better digital experiences. If you’d like to discuss a project, collaboration, or opportunity, I’d love to connect.
+              </p>
             </div>
-            <div className="space-y-4 text-sm">
+            <div className="space-y-3 sm:space-y-4 text-xs sm:text-sm">
               <a href="mailto:layiq567@gmail.com" className="contact-link"><span>Email</span><strong>layiq567@gmail.com</strong></a>
               <a href="tel:+918129550889" className="contact-link"><span>Phone</span><strong>+91 81295 50889</strong></a>
               <a href="https://www.linkedin.com/in/layiq-m" target="_blank" rel="noopener noreferrer" className="contact-link"><span>LinkedIn</span><strong>linkedin.com/in/layiq-m</strong></a>
