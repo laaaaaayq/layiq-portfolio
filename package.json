@@ -12,10 +12,7 @@
     "format": "prettier --write ."
   },
   "engines": {
-    "node": ">=20.12.0"
-  },
-  "overrides": {
-    "rolldown": "1.2.1"
+    "node": "22.x"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
