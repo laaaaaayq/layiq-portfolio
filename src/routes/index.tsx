@@ -186,7 +186,7 @@ function Index() {
   }, [mobileMenuOpen]);
 
   return (
-    <main className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
+    <main className="relative min-h-screen overflow-x-hidden bg-background text-foreground font-sans" style={{ fontFamily: "'Montserrat', sans-serif" }}>
       <CursorGlow />
       <nav className={`sticky top-3 sm:top-4 z-50 mx-auto flex w-[min(92%,920px)] flex-col border border-border bg-nav/95 px-4 py-2.5 sm:px-6 sm:py-3 shadow-nav backdrop-blur-md transition-all duration-300 ${mobileMenuOpen ? "rounded-2xl" : "rounded-full"}`}>
         <div className="flex w-full items-center justify-between">
