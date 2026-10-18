@@ -71,8 +71,8 @@ const navLinks = [
   { label: "Skills", href: "#skills" },
   { label: "Approach", href: "#approach" },
   { label: "Journey", href: "#journey" },
-  { label: "Contact", href: "#contact" },
   { label: "Resume", href: "#resume" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const journeyItems = [
@@ -475,29 +475,10 @@ function Index() {
           </div>
         </section>
 
-        <section id="contact" className="scroll-mt-24 sm:scroll-mt-28 border-t border-border py-14 sm:py-20 md:py-28">
-          <p className="section-label">06 / Contact</p>
-          <div className="mt-6 sm:mt-8 grid gap-8 sm:gap-12 md:grid-cols-[1.25fr_0.75fr] md:items-end">
-            <div>
-              <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">
-                Let’s create something meaningful.
-              </h2>
-              <p className="mt-3 sm:mt-5 max-w-xl text-sm sm:text-base md:text-lg text-muted-foreground">
-                I’m always interested in learning, exploring new ideas, and creating better digital experiences. If you’d like to discuss a project, collaboration, or opportunity, I’d love to connect.
-              </p>
-            </div>
-            <div className="space-y-2.5 sm:space-y-4 text-xs sm:text-sm">
-              <a href="mailto:layiq567@gmail.com" className="contact-link"><span>Email</span><strong>layiq567@gmail.com</strong></a>
-              <a href="tel:+918129550889" className="contact-link"><span>Phone</span><strong>+91 81295 50889</strong></a>
-              <a href="https://www.linkedin.com/in/layiq-m" target="_blank" rel="noopener noreferrer" className="contact-link"><span>LinkedIn</span><strong>linkedin.com/in/layiq-m</strong></a>
-            </div>
-          </div>
-        </section>
-
         <section id="resume" className="scroll-mt-24 sm:scroll-mt-28 border-t border-border py-14 sm:py-20 md:py-28">
           <div className="grid gap-8 sm:gap-10 md:grid-cols-[0.7fr_1.3fr] md:items-start">
             <div>
-              <p className="section-label">07 / Resume</p>
+              <p className="section-label">06 / Resume</p>
               <h2 className="mt-2.5 sm:mt-4 text-2xl sm:text-3xl md:text-4xl font-semibold">
                 Curriculum Vitae
               </h2>
@@ -548,6 +529,25 @@ function Index() {
                   </span>
                 </div>
               </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" className="scroll-mt-24 sm:scroll-mt-28 border-t border-border py-14 sm:py-20 md:py-28">
+          <p className="section-label">07 / Contact</p>
+          <div className="mt-6 sm:mt-8 grid gap-8 sm:gap-12 md:grid-cols-[1.25fr_0.75fr] md:items-end">
+            <div>
+              <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">
+                Let’s create something meaningful.
+              </h2>
+              <p className="mt-3 sm:mt-5 max-w-xl text-sm sm:text-base md:text-lg text-muted-foreground">
+                I’m always interested in learning, exploring new ideas, and creating better digital experiences. If you’d like to discuss a project, collaboration, or opportunity, I’d love to connect.
+              </p>
+            </div>
+            <div className="space-y-2.5 sm:space-y-4 text-xs sm:text-sm">
+              <a href="mailto:layiq567@gmail.com" className="contact-link"><span>Email</span><strong>layiq567@gmail.com</strong></a>
+              <a href="tel:+918129550889" className="contact-link"><span>Phone</span><strong>+91 81295 50889</strong></a>
+              <a href="https://www.linkedin.com/in/layiq-m" target="_blank" rel="noopener noreferrer" className="contact-link"><span>LinkedIn</span><strong>linkedin.com/in/layiq-m</strong></a>
             </div>
           </div>
         </section>
