@@ -5,8 +5,28 @@ import lyroCover from "@/assets/lyro-cover.jpg";
 import myopCover from "@/assets/myop-cover.jpg";
 import movieHubDashboardCover from "@/assets/movie-hub-dashboard.png";
 import layiqCharacter from "@/assets/layiq-hero.png";
+import resumePreview from "@/assets/layiq-resume-preview.jpg";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { CursorGlow } from "@/components/CursorGlow";
+
+function EyeIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
+      <circle cx="12" cy="12" r="3" />
+    </svg>
+  );
+}
+
+function DownloadIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <polyline points="7 10 12 15 17 10" />
+      <line x1="12" y1="15" x2="12" y2="3" />
+    </svg>
+  );
+}
 
 function MobileMenuIcon({ isOpen }: { isOpen: boolean }) {
   return isOpen ? (
@@ -52,6 +72,7 @@ const navLinks = [
   { label: "Approach", href: "#approach" },
   { label: "Journey", href: "#journey" },
   { label: "Contact", href: "#contact" },
+  { label: "Resume", href: "#resume" },
 ];
 
 const journeyItems = [
@@ -469,6 +490,64 @@ function Index() {
               <a href="mailto:layiq567@gmail.com" className="contact-link"><span>Email</span><strong>layiq567@gmail.com</strong></a>
               <a href="tel:+918129550889" className="contact-link"><span>Phone</span><strong>+91 81295 50889</strong></a>
               <a href="https://www.linkedin.com/in/layiq-m" target="_blank" rel="noopener noreferrer" className="contact-link"><span>LinkedIn</span><strong>linkedin.com/in/layiq-m</strong></a>
+            </div>
+          </div>
+        </section>
+
+        <section id="resume" className="scroll-mt-24 sm:scroll-mt-28 border-t border-border py-14 sm:py-20 md:py-28">
+          <div className="grid gap-8 sm:gap-10 md:grid-cols-[0.7fr_1.3fr] md:items-start">
+            <div>
+              <p className="section-label">07 / Resume</p>
+              <h2 className="mt-2.5 sm:mt-4 text-2xl sm:text-3xl md:text-4xl font-semibold">
+                Curriculum Vitae
+              </h2>
+              <p className="mt-2.5 sm:mt-4 max-w-sm text-xs sm:text-sm md:text-base leading-relaxed text-muted-foreground">
+                A comprehensive overview of my UI/UX design experience, technical skill set, design projects, education, and credentials.
+              </p>
+
+              {/* 2 Buttons: View and Download */}
+              <div className="mt-6 flex flex-wrap items-center gap-3">
+                <a
+                  href="/Layiq_M_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#59cdc6] px-5 py-2.5 text-xs sm:text-sm font-semibold text-slate-900 transition-all duration-300 hover:bg-[#59cdc6]/90 hover:shadow-[0_0_20px_rgba(89,205,198,0.4)] active:scale-95"
+                >
+                  <EyeIcon />
+                  <span>View</span>
+                </a>
+                <a
+                  href="/Layiq_M_Resume.pdf"
+                  download="Layiq_M_Resume.pdf"
+                  className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-5 py-2.5 text-xs sm:text-sm font-semibold text-foreground transition-all duration-300 hover:border-[#59cdc6] hover:text-[#59cdc6] hover:bg-card active:scale-95"
+                >
+                  <DownloadIcon />
+                  <span>Download</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Resume Interactive Preview Card */}
+            <div className="group relative overflow-hidden rounded-2xl border border-border bg-card/60 p-3 sm:p-4 transition-all duration-300 hover:border-[#59cdc6]/40 hover:shadow-[0_8px_30px_rgba(89,205,198,0.1)]">
+              <a
+                href="/Layiq_M_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block relative overflow-hidden rounded-xl bg-white shadow-inner cursor-pointer"
+                title="Click to view full PDF"
+              >
+                <img
+                  src={resumePreview}
+                  alt="Layiq M Resume Preview"
+                  className="w-full object-cover transition-transform duration-500 group-hover:scale-[1.01]"
+                />
+                <div className="absolute inset-0 bg-slate-950/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-center justify-center">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-slate-900/90 text-white px-4 py-2 text-xs sm:text-sm font-medium shadow-lg backdrop-blur-sm">
+                    <EyeIcon />
+                    Click to Open Fullscreen
+                  </span>
+                </div>
+              </a>
             </div>
           </div>
         </section>
