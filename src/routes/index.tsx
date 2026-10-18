@@ -150,7 +150,7 @@ const skills = [
   {
     number: "03",
     title: "Tools",
-    description: "Figma · FigJam · Canva · Google Stitch · Gemini · ChatGPT",
+    description: "Figma · FigJam · Canva · AI Tools",
   },
   {
     number: "04",
