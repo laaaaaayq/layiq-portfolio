@@ -49,6 +49,7 @@ const navLinks = [
   { label: "About", href: "#about" },
   { label: "Work", href: "#work" },
   { label: "Skills", href: "#skills" },
+  { label: "Approach", href: "#approach" },
   { label: "Journey", href: "#journey" },
   { label: "Contact", href: "#contact" },
 ];
@@ -152,11 +153,28 @@ const skills = [
     title: "Tools",
     description: "Figma · FigJam · Canva · Adobe Illustrator · AI Tools",
   },
+];
+
+const approachSteps = [
   {
-    number: "04",
-    title: "My Approach",
-    description:
-      "Understand → Explore → Design → Refine. I use research and feedback to create interfaces that are clear, useful, and easy to use.",
+    step: "01",
+    title: "Understand",
+    description: "User research, user personas, problem definition, and stakeholder requirements.",
+  },
+  {
+    step: "02",
+    title: "Explore",
+    description: "Information architecture, user journey flows, and low-fidelity wireframing.",
+  },
+  {
+    step: "03",
+    title: "Design",
+    description: "High-fidelity visual design, design systems, modern typography, and components.",
+  },
+  {
+    step: "04",
+    title: "Refine",
+    description: "Interactive prototyping, usability testing, and thoughtful iteration to polish UX.",
   },
 ];
 
@@ -355,10 +373,40 @@ function Index() {
           </div>
         </section>
 
+        <section id="approach" className="scroll-mt-24 sm:scroll-mt-28 border-t border-border py-14 sm:py-20 md:py-28">
+          <div className="grid gap-6 sm:gap-10 md:grid-cols-[0.7fr_1.3fr]">
+            <div>
+              <p className="section-label">04 / My Approach</p>
+              <h2 className="mt-2.5 sm:mt-4 text-2xl sm:text-3xl md:text-4xl font-semibold">How I work.</h2>
+              <p className="mt-2.5 sm:mt-4 max-w-sm text-xs sm:text-sm md:text-base leading-relaxed text-muted-foreground">
+                Understand → Explore → Design → Refine. I use research and feedback to create interfaces that are clear, useful, and easy to use.
+              </p>
+            </div>
+
+            <div className="grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-2">
+              {approachSteps.map((step) => (
+                <div
+                  key={step.title}
+                  className="rounded-2xl border border-border bg-card/60 p-4 sm:p-5 transition-all duration-300 hover:border-[#59cdc6]/40 hover:bg-card hover:shadow-[0_4px_20px_rgba(89,205,198,0.08)]"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-semibold text-accent">{step.step}</span>
+                    <span className="text-[10px] sm:text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                      Phase {step.step}
+                    </span>
+                  </div>
+                  <h3 className="mt-2 text-base sm:text-lg font-semibold text-foreground">{step.title}</h3>
+                  <p className="mt-1.5 text-xs sm:text-sm text-muted-foreground leading-relaxed">{step.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section id="journey" className="scroll-mt-24 sm:scroll-mt-28 border-t border-border py-14 sm:py-20 md:py-28">
           <div className="grid gap-6 sm:gap-10 md:grid-cols-[0.7fr_1.3fr]">
             <div>
-              <p className="section-label">04 / Journey</p>
+              <p className="section-label">05 / Journey</p>
               <h2 className="mt-2.5 sm:mt-4 text-2xl sm:text-3xl md:text-4xl font-semibold">My Roadmap</h2>
               <p className="mt-2.5 sm:mt-4 max-w-sm text-xs sm:text-sm md:text-base leading-relaxed text-muted-foreground">
                 Key milestones across education, professional experience, and my journey into UI/UX design.
@@ -407,7 +455,7 @@ function Index() {
         </section>
 
         <section id="contact" className="scroll-mt-24 sm:scroll-mt-28 border-t border-border py-14 sm:py-20 md:py-28">
-          <p className="section-label">05 / Contact</p>
+          <p className="section-label">06 / Contact</p>
           <div className="mt-6 sm:mt-8 grid gap-8 sm:gap-12 md:grid-cols-[1.25fr_0.75fr] md:items-end">
             <div>
               <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">
