@@ -254,21 +254,29 @@ function Index() {
       </nav>
 
       <div id="top" className="relative z-10 mx-auto w-[min(92%,920px)]">
-        <header className="grid min-h-[auto] sm:min-h-[560px] md:min-h-[640px] scroll-mt-24 items-center gap-8 sm:gap-10 py-10 sm:py-20 md:grid-cols-[1.3fr_0.7fr] md:py-28">
+        <header className="grid min-h-[auto] sm:min-h-[560px] md:min-h-[640px] scroll-mt-24 items-center gap-8 sm:gap-10 py-10 sm:py-20 md:grid-cols-[1.35fr_0.65fr] md:py-28">
           <div className="reveal space-y-4 sm:space-y-6 md:space-y-7">
             <div className="flex items-center gap-2.5 sm:gap-3 text-xs font-medium uppercase tracking-wider text-accent">
               <span className="h-2 w-2 rounded-full bg-accent shadow-status" />
               UI/UX Designer
             </div>
-            <h1 className="max-w-[680px] text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.08] sm:leading-[0.95] tracking-tight">
-              Designing digital experiences that feel <span className="text-accent">effortless.</span>
+            <h1 className="text-[1.65rem] min-[400px]:text-[1.95rem] sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem] font-bold leading-[1.15] sm:leading-[1.1] tracking-tight">
+              <span className="block">Designing digital</span>
+              <span className="block">experiences that feel</span>
+              <span className="block text-accent">effortless.</span>
             </h1>
             <p className="max-w-xl text-sm sm:text-base md:text-lg leading-relaxed text-muted-foreground">
               I’m Layiq, a UI/UX designer passionate about understanding users, solving design problems, and turning ideas into meaningful digital products.
             </p>
-            <a href="#work" className="inline-flex items-center gap-2.5 sm:gap-3 border-b border-accent pb-1.5 sm:pb-2 text-sm sm:text-base font-semibold text-foreground transition-colors hover:text-accent">
-              Explore selected work <ArrowIcon />
-            </a>
+            <div>
+              <a
+                href="#work"
+                className="inline-flex items-center gap-2.5 rounded-full bg-[#59cdc6] px-6 py-3 text-xs sm:text-sm font-semibold text-slate-900 transition-all duration-300 hover:bg-[#59cdc6]/90 hover:shadow-[0_0_24px_rgba(89,205,198,0.45)] hover:scale-[1.02] active:scale-95"
+              >
+                <span>Explore selected work</span>
+                <ArrowIcon />
+              </a>
+            </div>
           </div>
 
           <div className="reveal relative mx-auto flex w-full max-w-[190px] sm:max-w-[260px] md:max-w-[320px] items-center justify-center">
@@ -304,41 +312,33 @@ function Index() {
         </section>
 
         <section id="work" className="scroll-mt-24 sm:scroll-mt-28 border-t border-border py-14 sm:py-20 md:py-28">
-          <div className="mb-6 sm:mb-10 flex items-end justify-between gap-4 border-b border-border pb-4 sm:pb-5">
-            <div>
-              <p className="section-label">02 / Selected work</p>
-              <h2 className="mt-2 sm:mt-3 text-2xl sm:text-3xl md:text-4xl font-semibold">Projects</h2>
-            </div>
-            <span className="text-xs text-muted-foreground">04 projects</span>
+          <div className="mb-6 sm:mb-10 border-b border-border pb-4 sm:pb-5">
+            <p className="section-label">02 / Selected work</p>
+            <h2 className="mt-2 sm:mt-3 text-2xl sm:text-3xl md:text-4xl font-semibold">Projects</h2>
           </div>
 
           <div className="grid gap-6 sm:gap-8 md:gap-x-6 md:gap-y-12 grid-cols-1 md:grid-cols-2">
             {projects.map((project) => (
-              <article key={project.title} className="group">
+              <a
+                key={project.title}
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block cursor-pointer transition-transform duration-300 hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#59cdc6] rounded-lg"
+              >
                 <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border bg-card">
-                  <img src={project.cover} alt={project.coverAlt} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]" />
+                  <img
+                    src={project.cover}
+                    alt={project.coverAlt}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
                   <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-project-caption/95 px-3.5 sm:px-5 py-2.5 sm:py-3.5 backdrop-blur-sm">
                     <span className="text-[11px] sm:text-xs font-medium text-muted-foreground">{project.number} / {project.type}</span>
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`View ${project.title} on Behance`}
-                      className="flex h-8 w-8 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-full border border-border text-foreground transition-all duration-200 hover:border-[#59cdc6] hover:text-[#59cdc6] group-hover:border-[#59cdc6] group-hover:text-[#59cdc6]"
-                    >
-                      <ArrowIcon />
-                    </a>
                   </div>
                 </div>
-                <h3 className="mt-3.5 sm:mt-5 text-base sm:text-lg md:text-xl font-semibold break-words">
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="transition-colors hover:text-[#59cdc6]"
-                  >
-                    {project.title}
-                  </a>
+                <h3 className="mt-3.5 sm:mt-5 text-base sm:text-lg md:text-xl font-semibold break-words text-foreground transition-colors group-hover:text-[#59cdc6]">
+                  {project.title}
                 </h3>
                 <p className="mt-1.5 sm:mt-2 text-xs sm:text-sm md:text-base leading-relaxed text-muted-foreground">{project.description}</p>
                 <div className="mt-3 sm:mt-4 flex flex-wrap gap-1.5 sm:gap-2">
@@ -348,7 +348,7 @@ function Index() {
                     </span>
                   ))}
                 </div>
-              </article>
+              </a>
             ))}
           </div>
         </section>
