@@ -8,15 +8,6 @@ import layiqCharacter from "@/assets/layiq-hero.png";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { CursorGlow } from "@/components/CursorGlow";
 
-function EyeIcon() {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
-      <circle cx="12" cy="12" r="3" />
-    </svg>
-  );
-}
-
 function MobileMenuIcon({ isOpen }: { isOpen: boolean }) {
   return isOpen ? (
     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -474,19 +465,6 @@ function Index() {
               <p className="mt-2.5 sm:mt-4 max-w-sm text-xs sm:text-sm md:text-base leading-relaxed text-muted-foreground">
                 A comprehensive overview of my UI/UX design experience, technical skill set, design projects, education, and credentials.
               </p>
-
-              {/* Action Button: Tap to see my cv */}
-              <div className="mt-6">
-                <a
-                  href="/Layiq_M_Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 rounded-full bg-[#59cdc6] px-6 py-3 text-xs sm:text-sm font-semibold text-slate-900 transition-all duration-300 hover:bg-[#59cdc6]/90 hover:shadow-[0_0_24px_rgba(89,205,198,0.45)] hover:scale-[1.02] active:scale-95"
-                >
-                  <EyeIcon />
-                  <span>Tap to see my cv</span>
-                </a>
-              </div>
             </div>
 
             {/* Document Card Overview */}
@@ -531,13 +509,13 @@ function Index() {
                 </div>
               </div>
 
-              <div className="mt-5 pt-4 border-t border-border flex items-center justify-between text-xs text-muted-foreground">
+              <div className="mt-5 pt-4 border-t border-border flex flex-wrap items-center justify-between gap-3 text-xs text-muted-foreground">
                 <span>View full credentials &amp; contact details</span>
                 <a
                   href="/Layiq_M_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 font-semibold text-[#59cdc6] hover:underline"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#59cdc6] px-4 py-2 text-xs font-semibold text-slate-900 transition-all duration-300 hover:bg-[#59cdc6]/90 hover:shadow-[0_0_20px_rgba(89,205,198,0.4)] hover:scale-[1.02] active:scale-95"
                 >
                   <span>Open PDF</span>
                   <ArrowIcon />
