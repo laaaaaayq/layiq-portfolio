@@ -5,7 +5,6 @@ import lyroCover from "@/assets/lyro-cover.jpg";
 import myopCover from "@/assets/myop-cover.jpg";
 import movieHubDashboardCover from "@/assets/movie-hub-dashboard.png";
 import layiqCharacter from "@/assets/layiq-hero.png";
-import resumePreview from "@/assets/layiq-resume-preview.jpg";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { CursorGlow } from "@/components/CursorGlow";
 
@@ -14,16 +13,6 @@ function EyeIcon() {
     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
       <circle cx="12" cy="12" r="3" />
-    </svg>
-  );
-}
-
-function DownloadIcon() {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-      <polyline points="7 10 12 15 17 10" />
-      <line x1="12" y1="15" x2="12" y2="3" />
     </svg>
   );
 }
@@ -476,7 +465,7 @@ function Index() {
         </section>
 
         <section id="resume" className="scroll-mt-24 sm:scroll-mt-28 border-t border-border py-14 sm:py-20 md:py-28">
-          <div className="grid gap-8 sm:gap-10 md:grid-cols-[0.7fr_1.3fr] md:items-start">
+          <div className="grid gap-8 sm:gap-10 md:grid-cols-[0.7fr_1.3fr] md:items-center">
             <div>
               <p className="section-label">06 / Resume</p>
               <h2 className="mt-2.5 sm:mt-4 text-2xl sm:text-3xl md:text-4xl font-semibold">
@@ -486,49 +475,74 @@ function Index() {
                 A comprehensive overview of my UI/UX design experience, technical skill set, design projects, education, and credentials.
               </p>
 
-              {/* 2 Buttons: View and Download */}
-              <div className="mt-6 flex flex-wrap items-center gap-3">
+              {/* Action Button: Tap to see my cv */}
+              <div className="mt-6">
                 <a
                   href="/Layiq_M_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#59cdc6] px-5 py-2.5 text-xs sm:text-sm font-semibold text-slate-900 transition-all duration-300 hover:bg-[#59cdc6]/90 hover:shadow-[0_0_20px_rgba(89,205,198,0.4)] active:scale-95"
+                  className="inline-flex items-center gap-2.5 rounded-full bg-[#59cdc6] px-6 py-3 text-xs sm:text-sm font-semibold text-slate-900 transition-all duration-300 hover:bg-[#59cdc6]/90 hover:shadow-[0_0_24px_rgba(89,205,198,0.45)] hover:scale-[1.02] active:scale-95"
                 >
                   <EyeIcon />
-                  <span>View</span>
-                </a>
-                <a
-                  href="/Layiq_M_Resume.pdf"
-                  download="Layiq_M_Resume.pdf"
-                  className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-5 py-2.5 text-xs sm:text-sm font-semibold text-foreground transition-all duration-300 hover:border-[#59cdc6] hover:text-[#59cdc6] hover:bg-card active:scale-95"
-                >
-                  <DownloadIcon />
-                  <span>Download</span>
+                  <span>Tap to see my cv</span>
                 </a>
               </div>
             </div>
 
-            {/* Resume Interactive Preview Card */}
-            <div className="group relative overflow-hidden rounded-2xl border border-border bg-card/60 p-3 sm:p-4 transition-all duration-300 hover:border-[#59cdc6]/40 hover:shadow-[0_8px_30px_rgba(89,205,198,0.1)]">
-              <a
-                href="/Layiq_M_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block relative overflow-hidden rounded-xl bg-white shadow-inner cursor-pointer"
-                title="Click to view full PDF"
-              >
-                <img
-                  src={resumePreview}
-                  alt="Layiq M Resume Preview"
-                  className="w-full object-cover transition-transform duration-500 group-hover:scale-[1.01]"
-                />
-                <div className="absolute inset-0 bg-slate-950/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-center justify-center">
-                  <span className="inline-flex items-center gap-2 rounded-full bg-slate-900/90 text-white px-4 py-2 text-xs sm:text-sm font-medium shadow-lg backdrop-blur-sm">
-                    <EyeIcon />
-                    Click to Open Fullscreen
-                  </span>
+            {/* Document Card Overview */}
+            <div className="rounded-2xl border border-border bg-card/60 p-5 sm:p-7 transition-all duration-300 hover:border-[#59cdc6]/40 hover:bg-card hover:shadow-[0_8px_30px_rgba(89,205,198,0.08)]">
+              <div className="flex items-center justify-between border-b border-border pb-4">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#59cdc6]/15 text-[#59cdc6]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                      <polyline points="14 2 14 8 20 8" />
+                      <line x1="16" y1="13" x2="8" y2="13" />
+                      <line x1="16" y1="17" x2="8" y2="17" />
+                      <line x1="10" y1="9" x2="8" y2="9" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-sm sm:text-base font-semibold text-foreground">Layiq_M_Resume.pdf</h3>
+                    <p className="text-[11px] sm:text-xs text-muted-foreground">UI/UX Designer · PDF Document</p>
+                  </div>
                 </div>
-              </a>
+                <span className="inline-flex items-center rounded-full border border-[#59cdc6]/30 bg-[#59cdc6]/15 px-2.5 py-1 text-[10px] sm:text-[11px] font-medium text-[#59cdc6]">
+                  Verified
+                </span>
+              </div>
+
+              <div className="mt-5 grid grid-cols-2 gap-3 sm:gap-4 text-xs sm:text-sm">
+                <div className="rounded-xl border border-border/70 bg-background/50 p-3">
+                  <span className="text-[10px] sm:text-xs font-medium uppercase tracking-wider text-muted-foreground">Role</span>
+                  <p className="mt-1 font-semibold text-foreground">UI/UX Designer</p>
+                </div>
+                <div className="rounded-xl border border-border/70 bg-background/50 p-3">
+                  <span className="text-[10px] sm:text-xs font-medium uppercase tracking-wider text-muted-foreground">Experience</span>
+                  <p className="mt-1 font-semibold text-foreground">Zoople Technologies</p>
+                </div>
+                <div className="rounded-xl border border-border/70 bg-background/50 p-3">
+                  <span className="text-[10px] sm:text-xs font-medium uppercase tracking-wider text-muted-foreground">Education</span>
+                  <p className="mt-1 font-semibold text-foreground">BCA (Calicut Univ.)</p>
+                </div>
+                <div className="rounded-xl border border-border/70 bg-background/50 p-3">
+                  <span className="text-[10px] sm:text-xs font-medium uppercase tracking-wider text-muted-foreground">Tools</span>
+                  <p className="mt-1 font-semibold text-foreground">Figma · AI Tools</p>
+                </div>
+              </div>
+
+              <div className="mt-5 pt-4 border-t border-border flex items-center justify-between text-xs text-muted-foreground">
+                <span>View full credentials &amp; contact details</span>
+                <a
+                  href="/Layiq_M_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 font-semibold text-[#59cdc6] hover:underline"
+                >
+                  <span>Open PDF</span>
+                  <ArrowIcon />
+                </a>
+              </div>
             </div>
           </div>
         </section>
