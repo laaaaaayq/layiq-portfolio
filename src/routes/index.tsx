@@ -481,7 +481,7 @@ function Index() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-sm sm:text-base font-semibold text-foreground">Layiq_M_Resume.pdf</h3>
+                    <h3 className="text-sm sm:text-base font-semibold text-foreground">Layiq M</h3>
                     <p className="text-[11px] sm:text-xs text-muted-foreground">UI/UX Designer · PDF Document</p>
                   </div>
                 </div>
@@ -512,7 +512,7 @@ function Index() {
               <div className="mt-5 pt-4 border-t border-border flex flex-wrap items-center justify-between gap-3 text-xs text-muted-foreground">
                 <span>View full credentials &amp; contact details</span>
                 <a
-                  href="/Layiq_M_Resume.pdf"
+                  href="/Layiq_M.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full bg-[#59cdc6] px-4 py-2 text-xs font-semibold text-slate-900 transition-all duration-300 hover:bg-[#59cdc6]/90 hover:shadow-[0_0_20px_rgba(89,205,198,0.4)] hover:scale-[1.02] active:scale-95"
@@ -540,6 +540,7 @@ function Index() {
               <a href="mailto:layiq567@gmail.com" className="contact-link"><span>Email</span><strong>layiq567@gmail.com</strong></a>
               <a href="tel:+918129550889" className="contact-link"><span>Phone</span><strong>+91 81295 50889</strong></a>
               <a href="https://www.linkedin.com/in/layiq-m" target="_blank" rel="noopener noreferrer" className="contact-link"><span>LinkedIn</span><strong>linkedin.com/in/layiq-m</strong></a>
+              <a href="https://www.behance.net/layiqm" target="_blank" rel="noopener noreferrer" className="contact-link"><span>Behance</span><strong>behance.net/layiqm</strong></a>
               <a href="https://github.com/laaaaaayq" target="_blank" rel="noopener noreferrer" className="contact-link"><span>GitHub</span><strong>github.com/laaaaaayq</strong></a>
             </div>
           </div>
