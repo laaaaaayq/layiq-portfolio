@@ -187,6 +187,48 @@ function ArrowIcon() {
   );
 }
 
+function ScrollToTopButton() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const toggleVisibility = () => {
+      setVisible(window.scrollY > 300);
+    };
+    toggleVisibility();
+    window.addEventListener("scroll", toggleVisibility, { passive: true });
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  return (
+    <button
+      type="button"
+      onClick={scrollToTop}
+      aria-label="Scroll back to top"
+      className={`fixed bottom-6 right-6 z-40 flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-border/80 bg-nav/90 text-foreground shadow-lg backdrop-blur-md transition-all duration-300 hover:border-[#59cdc6] hover:text-[#59cdc6] hover:shadow-[0_0_20px_rgba(89,205,198,0.35)] hover:scale-110 active:scale-95 ${
+        visible ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-4 pointer-events-none"
+      }`}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="h-5 w-5"
+        aria-hidden="true"
+      >
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+  );
+}
+
 function Index() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -551,6 +593,7 @@ function Index() {
           <span>UI/UX Designer · Designing with clarity and care</span>
         </footer>
       </div>
+      <ScrollToTopButton />
     </main>
   );
 }
