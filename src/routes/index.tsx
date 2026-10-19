@@ -540,6 +540,7 @@ function Index() {
               <a href="mailto:layiq567@gmail.com" className="contact-link"><span>Email</span><strong>layiq567@gmail.com</strong></a>
               <a href="tel:+918129550889" className="contact-link"><span>Phone</span><strong>+91 81295 50889</strong></a>
               <a href="https://www.linkedin.com/in/layiq-m" target="_blank" rel="noopener noreferrer" className="contact-link"><span>LinkedIn</span><strong>linkedin.com/in/layiq-m</strong></a>
+              <a href="https://github.com/laaaaaayq" target="_blank" rel="noopener noreferrer" className="contact-link"><span>GitHub</span><strong>github.com/laaaaaayq</strong></a>
             </div>
           </div>
         </section>
