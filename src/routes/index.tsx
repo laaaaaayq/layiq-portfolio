@@ -4,6 +4,7 @@ import movieHubCover from "@/assets/movie-hub-cover.jpg";
 import lyroCover from "@/assets/lyro-cover.jpg";
 import myopCover from "@/assets/myop-cover.jpg";
 import movieHubDashboardCover from "@/assets/movie-hub-dashboard.png";
+import circleGymnasticsCover from "@/assets/circle-gymnastics-cover.jpg";
 import layiqCharacter from "@/assets/layiq-hero.png";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { CursorGlow } from "@/components/CursorGlow";
@@ -133,6 +134,17 @@ const projects = [
     cover: movieHubDashboardCover,
     coverAlt: "MOVIE HUB dashboard showing movie and series streaming interface",
     url: "https://www.behance.net/gallery/256033873/MOVIE-HUB-Movie-Series-Dashboard",
+  },
+  {
+    number: "05",
+    title: "Circle Gymnastics — Brand Identity Guidelines",
+    type: "Branding",
+    description:
+      "A comprehensive brand identity and visual guidelines concept for Circle Gymnastics, defining logo systems, typography, color palettes, and athletic brand assets.",
+    tags: ["Adobe Illustrator", "Google Gemini", "Branding"],
+    cover: circleGymnasticsCover,
+    coverAlt: "Circle Gymnastics brand identity guidelines presentation cover",
+    url: "https://www.behance.net/gallery/257309213/Circle-Gymnastics-Brand-Identity-Guidelines",
   },
 ];
 
@@ -333,7 +345,7 @@ function Index() {
           </div>
           <div className="py-3 sm:py-0 sm:px-6 md:px-8">
             <p className="text-[11px] sm:text-xs uppercase tracking-wider text-muted-foreground">Selected work</p>
-            <p className="mt-1 text-sm sm:text-base font-medium">04 product concepts</p>
+            <p className="mt-1 text-sm sm:text-base font-medium">05 design concepts</p>
           </div>
           <div className="py-3 sm:py-0 sm:pl-6 md:pl-8">
             <p className="text-[11px] sm:text-xs uppercase tracking-wider text-muted-foreground">Process</p>
