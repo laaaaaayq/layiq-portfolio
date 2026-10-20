@@ -4,7 +4,7 @@ import movieHubCover from "@/assets/movie-hub-cover.jpg";
 import lyroCover from "@/assets/lyro-cover.jpg";
 import myopCover from "@/assets/myop-cover.jpg";
 import movieHubDashboardCover from "@/assets/movie-hub-dashboard.png";
-import circleGymnasticsCover from "@/assets/circle-gymnastics-cover.jpg";
+import circleGymnasticsCover from "@/assets/circle-gymnastics-cover.png";
 import layiqCharacter from "@/assets/layiq-hero.png";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { CursorGlow } from "@/components/CursorGlow";
@@ -141,7 +141,7 @@ const projects = [
     type: "Branding",
     description:
       "A comprehensive brand identity and visual guidelines concept for Circle Gymnastics, defining logo systems, typography, color palettes, and athletic brand assets.",
-    tags: ["Adobe Illustrator", "Google Gemini", "Branding"],
+    tags: ["Branding", "Adobe Illustrator", "Google Gemini"],
     cover: circleGymnasticsCover,
     coverAlt: "Circle Gymnastics brand identity guidelines presentation cover",
     url: "https://www.behance.net/gallery/257309213/Circle-Gymnastics-Brand-Identity-Guidelines",
