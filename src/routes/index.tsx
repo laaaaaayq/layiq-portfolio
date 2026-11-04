@@ -476,7 +476,7 @@ function Index() {
                     className={`absolute -left-[29px] sm:-left-[41px] top-1 z-10 h-4 w-4 sm:h-[18px] sm:w-[18px] rounded-full border-2 border-background transition-all duration-300 group-hover:scale-125 ${
                       item.isCurrent
                         ? "bg-[#59cdc6] border-[#59cdc6] shadow-[0_0_18px_#59cdc6] ring-4 ring-[#59cdc6]/30"
-                        : "bg-slate-300 dark:bg-[#323E4E] group-hover:!bg-[#59cdc6] dark:group-hover:!bg-[#59cdc6] group-hover:!border-[#59cdc6] group-hover:shadow-[0_0_20px_#59cdc6] group-hover:ring-4 group-hover:ring-[#59cdc6]/40"
+                        : "bg-slate-300 dark:bg-[#45362C] group-hover:!bg-[#59cdc6] dark:group-hover:!bg-[#59cdc6] group-hover:!border-[#59cdc6] group-hover:shadow-[0_0_20px_#59cdc6] group-hover:ring-4 group-hover:ring-[#59cdc6]/40"
                     }`}
                   />
 
