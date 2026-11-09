@@ -6,6 +6,7 @@ import myopCover from "@/assets/myop-cover.jpg";
 import movieHubDashboardCover from "@/assets/movie-hub-dashboard.png";
 import circleGymnasticsCover from "@/assets/circle-gymnastics-cover.png";
 import layiqCharacter from "@/assets/layiq-hero.png";
+import layiqCharacterLight from "@/assets/layiq-hero-light.png";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { CursorGlow } from "@/components/CursorGlow";
 
@@ -325,7 +326,7 @@ function Index() {
             <div>
               <a
                 href="#work"
-                className="inline-flex items-center gap-2.5 rounded-full bg-[#FFC000] px-6 py-3 text-xs sm:text-sm font-semibold text-slate-900 transition-all duration-300 hover:bg-[#FFC000]/90 hover:shadow-[0_0_24px_rgba(255,192,0,0.45)] hover:scale-[1.02] active:scale-95"
+                className="inline-flex items-center gap-2.5 rounded-full bg-[#0C645A] dark:bg-[#FFC000] px-6 py-3 text-xs sm:text-sm font-semibold text-white dark:text-slate-900 transition-all duration-300 hover:bg-[#0C645A]/90 dark:hover:bg-[#FFC000]/90 hover:shadow-[0_0_24px_rgba(12,100,90,0.35)] dark:hover:shadow-[0_0_24px_rgba(255,192,0,0.45)] hover:scale-[1.02] active:scale-95"
               >
                 <span>Explore selected work</span>
                 <ArrowIcon />
@@ -334,7 +335,8 @@ function Index() {
           </div>
 
           <div className="reveal relative mx-auto flex w-full max-w-[190px] sm:max-w-[260px] md:max-w-[320px] items-center justify-center">
-            <img src={layiqCharacter} alt="Portrait of Layiq M" className="relative z-10 w-full aspect-square rounded-full object-cover drop-shadow-character" />
+            <img src={layiqCharacter} alt="Portrait of Layiq M" className="hidden dark:block relative z-10 w-full aspect-square rounded-full object-cover drop-shadow-character" />
+            <img src={layiqCharacterLight} alt="Portrait of Layiq M" className="block dark:hidden relative z-10 w-full aspect-square rounded-full object-cover drop-shadow-character" />
           </div>
         </header>
 
@@ -569,7 +571,7 @@ function Index() {
                   href="/Layiq_M.pdf?v=2"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#FFC000] px-4 py-2 text-xs font-semibold text-slate-900 transition-all duration-300 hover:bg-[#FFC000]/90 hover:shadow-[0_0_20px_rgba(255,192,0,0.4)] hover:scale-[1.02] active:scale-95"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#0C645A] dark:bg-[#FFC000] px-4 py-2 text-xs font-semibold text-white dark:text-slate-900 transition-all duration-300 hover:bg-[#0C645A]/90 dark:hover:bg-[#FFC000]/90 hover:shadow-[0_0_20px_rgba(12,100,90,0.35)] dark:hover:shadow-[0_0_20px_rgba(255,192,0,0.4)] hover:scale-[1.02] active:scale-95"
                 >
                   <span>Open PDF</span>
                   <ArrowIcon />
