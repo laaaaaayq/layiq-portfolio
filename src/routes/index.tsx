@@ -220,7 +220,7 @@ function ScrollToTopButton() {
       type="button"
       onClick={scrollToTop}
       aria-label="Scroll back to top"
-      className={`fixed bottom-6 right-6 z-40 flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-border/80 bg-nav/90 text-foreground shadow-lg backdrop-blur-md transition-all duration-300 hover:border-[#FFC000] hover:text-[#FFC000] hover:shadow-[0_0_20px_rgba(255,192,0,0.35)] hover:scale-110 active:scale-95 ${
+      className={`fixed bottom-6 right-6 z-40 flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-border/80 bg-nav/90 text-foreground shadow-lg backdrop-blur-md transition-all duration-300 hover:border-[#0C645A] hover:text-[#0C645A] hover:shadow-[0_0_20px_rgba(12,100,90,0.35)] dark:hover:border-[#FFC000] dark:hover:text-[#FFC000] dark:hover:shadow-[0_0_20px_rgba(255,192,0,0.35)] hover:scale-110 active:scale-95 ${
         visible ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-4 pointer-events-none"
       }`}
     >
@@ -378,7 +378,7 @@ function Index() {
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block cursor-pointer transition-transform duration-300 hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FFC000] rounded-lg"
+                className="group block cursor-pointer transition-transform duration-300 hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0C645A] dark:focus-visible:ring-[#FFC000] rounded-lg"
               >
                 <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border bg-card">
                   <img
@@ -391,7 +391,7 @@ function Index() {
                     <span className="text-[11px] sm:text-xs font-medium text-muted-foreground">{project.number} / {project.type}</span>
                   </div>
                 </div>
-                <h3 className="mt-3.5 sm:mt-5 text-base sm:text-lg md:text-xl font-semibold break-words text-foreground transition-colors group-hover:text-[#FFC000]">
+                <h3 className="mt-3.5 sm:mt-5 text-base sm:text-lg md:text-xl font-semibold break-words text-foreground transition-colors group-hover:text-[#0C645A] dark:group-hover:text-[#FFC000]">
                   {project.title}
                 </h3>
                 <p className="mt-1.5 sm:mt-2 text-xs sm:text-sm md:text-base leading-relaxed text-muted-foreground">{project.description}</p>
@@ -442,7 +442,7 @@ function Index() {
               {approachSteps.map((step) => (
                 <div
                   key={step.title}
-                  className="rounded-2xl border border-border bg-card/60 p-4 sm:p-5 transition-all duration-300 hover:border-[#FFC000]/40 hover:bg-card hover:shadow-[0_4px_20px_rgba(255,192,0,0.08)]"
+                  className="rounded-2xl border border-border bg-card/60 p-4 sm:p-5 transition-all duration-300 hover:border-[#0C645A]/40 dark:hover:border-[#FFC000]/40 hover:bg-card hover:shadow-[0_4px_20px_rgba(12,100,90,0.08)] dark:hover:shadow-[0_4px_20px_rgba(255,192,0,0.12)]"
                 >
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-semibold text-accent">{step.step}</span>
@@ -475,20 +475,20 @@ function Index() {
                   <div
                     className={`absolute -left-[29px] sm:-left-[41px] top-1 z-10 h-4 w-4 sm:h-[18px] sm:w-[18px] rounded-full border-2 border-background transition-all duration-300 group-hover:scale-125 ${
                       item.isCurrent
-                        ? "bg-[#FFC000] border-[#FFC000] shadow-[0_0_18px_#FFC000] ring-4 ring-[#FFC000]/30"
-                        : "bg-slate-300 dark:bg-[#45362C] group-hover:!bg-[#FFC000] dark:group-hover:!bg-[#FFC000] group-hover:!border-[#FFC000] group-hover:shadow-[0_0_20px_#FFC000] group-hover:ring-4 group-hover:ring-[#FFC000]/40"
+                        ? "bg-[#0C645A] border-[#0C645A] shadow-[0_0_18px_rgba(12,100,90,0.35)] ring-4 ring-[#0C645A]/30 dark:bg-[#FFC000] dark:border-[#FFC000] dark:shadow-[0_0_18px_#FFC000] dark:ring-4 dark:ring-[#FFC000]/30"
+                        : "bg-slate-300 dark:bg-[#45362C] group-hover:!bg-[#0C645A] dark:group-hover:!bg-[#FFC000] group-hover:!border-[#0C645A] dark:group-hover:!border-[#FFC000] group-hover:shadow-[0_0_20px_rgba(12,100,90,0.35)] dark:group-hover:shadow-[0_0_20px_#FFC000] group-hover:ring-4 group-hover:ring-[#0C645A]/40 dark:group-hover:ring-[#FFC000]/40"
                     }`}
                   />
 
                   {/* Period & Tag */}
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-[#FFC000]">
+                    <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-[#0C645A] dark:text-[#FFC000]">
                       {item.period}
                     </span>
                     <span
                       className={`inline-flex items-center rounded-full px-2 sm:px-2.5 py-0.5 text-[10px] sm:text-[11px] font-medium ${
                         item.isCurrent
-                          ? "border border-[#FFC000]/30 bg-[#FFC000]/15 text-[#FFC000]"
+                          ? "border border-[#0C645A]/30 bg-[#0C645A]/10 text-[#0C645A] dark:border-[#FFC000]/30 dark:bg-[#FFC000]/15 dark:text-[#FFC000]"
                           : "bg-muted text-muted-foreground"
                       }`}
                     >
@@ -497,7 +497,7 @@ function Index() {
                   </div>
 
                   {/* Title & Organization */}
-                  <h3 className="mt-1.5 sm:mt-2 text-base sm:text-lg md:text-xl font-semibold text-foreground transition-colors group-hover:text-[#FFC000]">
+                  <h3 className="mt-1.5 sm:mt-2 text-base sm:text-lg md:text-xl font-semibold text-foreground transition-colors group-hover:text-[#0C645A] dark:group-hover:text-[#FFC000]">
                     {item.title}
                   </h3>
                   <p className="mt-1 text-xs sm:text-sm font-medium text-muted-foreground">
@@ -522,10 +522,10 @@ function Index() {
             </div>
 
             {/* Document Card Overview */}
-            <div className="rounded-2xl border border-border bg-card/60 p-5 sm:p-7 transition-all duration-300 hover:border-[#FFC000]/40 hover:bg-card hover:shadow-[0_8px_30px_rgba(255,192,0,0.08)]">
+            <div className="rounded-2xl border border-border bg-card/60 p-5 sm:p-7 transition-all duration-300 hover:border-[#0C645A]/40 dark:hover:border-[#FFC000]/40 hover:bg-card hover:shadow-[0_8px_30px_rgba(12,100,90,0.08)] dark:hover:shadow-[0_8px_30px_rgba(255,192,0,0.12)]">
               <div className="flex items-center justify-between border-b border-border pb-4">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#FFC000]/15 text-[#FFC000]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#0C645A]/10 text-[#0C645A] dark:bg-[#FFC000]/15 dark:text-[#FFC000]">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
                       <polyline points="14 2 14 8 20 8" />
@@ -539,7 +539,7 @@ function Index() {
                     <p className="text-[11px] sm:text-xs text-muted-foreground">UI/UX Designer · PDF Document</p>
                   </div>
                 </div>
-                <span className="inline-flex items-center rounded-full border border-[#FFC000]/30 bg-[#FFC000]/15 px-2.5 py-1 text-[10px] sm:text-[11px] font-medium text-[#FFC000]">
+                <span className="inline-flex items-center rounded-full border border-[#0C645A]/30 bg-[#0C645A]/10 px-2.5 py-1 text-[10px] sm:text-[11px] font-medium text-[#0C645A] dark:border-[#FFC000]/30 dark:bg-[#FFC000]/15 dark:text-[#FFC000]">
                   Verified
                 </span>
               </div>
