@@ -59,22 +59,11 @@ const navLinks = [
 
 const journeyItems = [
   {
-    period: "2020",
-    title: "Higher Secondary Examination (HSE)",
-    organization: "General Education",
-    badge: "Education",
-  },
-  {
-    period: "2020 – 2023",
-    title: "Bachelor of Computer Application (BCA)",
-    organization: "University of Calicut",
-    badge: "Degree",
-  },
-  {
-    period: "June 2023 – December 2023",
-    title: "Python - Django Internship",
-    organization: "Softroniics · Calicut, Kerala",
-    badge: "Internship",
+    period: "June 2026 – Present",
+    title: "UI/UX Designer Intern",
+    organization: "Zoople Technologies",
+    badge: "Present",
+    isCurrent: true,
   },
   {
     period: "March 2025 – April 2026",
@@ -83,11 +72,22 @@ const journeyItems = [
     badge: "Experience",
   },
   {
-    period: "June 2026 – Present",
-    title: "UI/UX Designer Intern",
-    organization: "Zoople Technologies",
-    badge: "Present",
-    isCurrent: true,
+    period: "June 2023 – December 2023",
+    title: "Python - Django Internship",
+    organization: "Softroniics · Calicut, Kerala",
+    badge: "Internship",
+  },
+  {
+    period: "2020 – 2023",
+    title: "Bachelor of Computer Application (BCA)",
+    organization: "University of Calicut",
+    badge: "Degree",
+  },
+  {
+    period: "2020",
+    title: "Higher Secondary Examination (HSE)",
+    organization: "General Education",
+    badge: "Education",
   },
 ];
 
