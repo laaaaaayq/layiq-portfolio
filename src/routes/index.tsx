@@ -568,7 +568,7 @@ function Index() {
               <div className="mt-5 pt-4 border-t border-border flex flex-wrap items-center justify-between gap-3 text-xs text-muted-foreground">
                 <span>View full credentials &amp; contact details</span>
                 <a
-                  href="/Layiq_M.pdf?v=2"
+                  href="/Layiq_M.pdf?v=3"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full bg-[#0C645A] dark:bg-[#FFC000] px-4 py-2 text-xs font-semibold text-white dark:text-slate-900 transition-all duration-300 hover:bg-[#0C645A]/90 dark:hover:bg-[#FFC000]/90 hover:shadow-[0_0_20px_rgba(12,100,90,0.35)] dark:hover:shadow-[0_0_20px_rgba(255,192,0,0.4)] hover:scale-[1.02] active:scale-95"
