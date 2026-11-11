@@ -26,7 +26,7 @@ export function CursorGlow() {
         visible ? "opacity-100" : "opacity-0"
       }`}
       style={{
-        background: `radial-gradient(650px circle at ${position.x}px ${position.y}px, var(--cursor-glow-1) 0%, var(--cursor-glow-2) 45%, transparent 70%)`,
+        background: `radial-gradient(350px circle at ${position.x}px ${position.y}px, var(--cursor-glow-1) 0%, var(--cursor-glow-2) 45%, transparent 70%)`,
       }}
       aria-hidden="true"
     />
